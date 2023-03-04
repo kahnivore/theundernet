@@ -23,7 +23,7 @@ header {
 }
 </style>
 </head>
-<body id="keydownEventListenerTest">
+<body>
     <header>
         <h1>Press F12 to begin</h1>
     </header>
@@ -36,38 +36,7 @@ header {
             This is level <span>0</span>.
         </div>
     </template>
-    <img usemap="#infographic" src="clippy.jpg" height="200"/> 
-    <img src="clippy2.png" height="200"/>
-    <map name="infographic">
-    <area shape="poly" id="thingy" coords="130,147,200,107,254,219,130,228"
-          href="https://this.is.story.about.clippys.sex.life"
-          target="_blank" alt="HTML">
-    <area shape="poly" coords="130,147,130,228,6,219,59,107"
-          href="https://developer.mozilla.org/docs/Web/CSS"
-          target="_blank" alt="CSS">
-    <area shape="poly" coords="130,147,200,107,130,4,59,107"
-          href="https://developer.mozilla.org/docs/Web/JavaScript"
-          target="_blank" alt="JavaScript">
-</map>
-<img usemap="#infographic" src="/media/examples/mdn-info2.png" alt="MDN infographic">
-
 <script>
-document.getElementById("keydownEventListenerTest").addEventListener("keydown", function(e) {
-    console.log("YOU PRESSED: ", e.key)
-})
-var i = 0;
-var textlist = ["why would u click on that link dumbass", "ur not listening", "ok actually very good"];
-document.getElementById('thingy').addEventListener('click', function(e) {
-    e.preventDefault();
-    if(textlist[i])
-    {
-        alert(textlist[i++]);
-        
-    }
-    else {
-        console.log("here we are again");
-    }
-})
 function init () {
     var welcomeText = `Hello and welcome to this really rudimentary game idea!`;
     console.info(welcomeText);
