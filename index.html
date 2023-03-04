@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!--
+Hello and welcome to this really rudimentary game idea!
+
+Go to the Console tab! :)
+-->
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Example Game for Web Console Learning?</title>
+<style>
+header {
+    text-align: center;
+    margin: 25% auto 0;
+}
+/**
+ * @group Game levels.
+ */
+#game-start {
+    position: absolute;
+    left: -9999px;
+}
+</style>
+</head>
+<body>
+    <header>
+        <h1>Press F12 to begin</h1>
+    </header>
+    <main id="game-container">
+        <!-- Whatever the current game state is. -->
+        <input id="game-start" type="text" />
+    </main>
+    <template id="game-template">
+        <div id="level-0">
+            This is level <span>0</span>.
+        </div>
+    </template>
+<script>
+function init () {
+    var welcomeText = `Hello and welcome to this really rudimentary game idea!`;
+    console.info(welcomeText);
+        var gameStart = document.getElementById('game-start');
+    gameStart.focus();
+    // When "F12" is pressed, we start Level 1 of the game
+    console.log("inside init before the event listener thing")
+    gameStart.addEventListener('keydown', function (e) {
+        console.log("you pressed _some_ key")
+        if ('F12' == e.key) {
+            console.log("you pressed the thing")
+            levelOne();
+        }
+    });
+}
+
+/**
+ * Prepares the next level of the game.
+ *
+ * @param {Number} n The game level number.
+ *
+ * @return {HTMLElement} The appended game level container.
+ */
+function prepareLevel (n) {
+    var t = document.getElementById('game-template');
+    var thisLevelId = `level-${n}`;
+
+    // Add the template to the document.
+    document.getElementById('game-container').appendChild(t.content);
+
+    // Updates the ID of the newly added game level template.
+    var priorLevelId = `level-${n - 1}`;
+    document.getElementById(priorLevelId).setAttribute('id', thisLevelId)
+    document.getElementById(thisLevelId).querySelector('span').textContent = n;
+
+    return document.getElementById(thisLevelId);
+}
+
+function levelOne () {
+    var gameLevel = prepareLevel(1);
+    const observer = new MutationObserver(function (mutationList, observer) {
+        mutationList.forEach(function (item) {
+            if (0 < item.removedNodes.length) {
+                levelTwo();
+            } else {
+                console.info('Not quite! Try again.');
+            }
+        });
+    });
+    observer.observe(gameLevel.parentElement, {
+        childList: true
+    });
+    console.log('Do something to remove the "Level 1" element from the page.')
+}
+
+function levelTwo () {
+    alert('You made it to Level 2!');
+}
+document.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>
