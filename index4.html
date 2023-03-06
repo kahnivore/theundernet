@@ -197,7 +197,7 @@ Go to the Console tab! :)
 
         }, 1000); //milliseconds
 
-			    fetch(`${window.location.scheme}://${window.location.host}${window.location.pathname}`)
+			    fetch(`${window.location.protocol}//${window.location.host}${window.location.pathname}`)
 	    .then((response) => response.text())
 	    .then((data) => console.log(data));
 
