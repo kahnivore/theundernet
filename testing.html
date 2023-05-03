@@ -1242,20 +1242,21 @@ jrei   \____________/~~~.
         function AddCookie(cookie) {
             document.cookie = `${cookie.key}=${cookie.value}; SameSite=Lax`;
             document.cookie = new cookie();
+
+            var watcher = setInterval(function () {
+                console.log('wathcing');
+                if (cookie1.value > 0) {
+                    console.log('strawberros');
+                    sDs(document.cookie.value);
+                }
+
+            }, 1000); //milliseconds
         } 
            
         
         var cookie1 = { key: "chocalate_coated_strawberries!", value: "0" };
 
-        var watcher = setInterval(function () {
-            console.log('wathcing');
-            if (cookie1.value > 0) {
-                console.log('fuck yesh fuck yes fuck yes');
-                sDs(document.cookie.value);
-            }
-
-
-        }, 1000); //milliseconds
+        
 
         
         var moodlight = false;
