@@ -1079,13 +1079,13 @@ jrei   \____________/~~~.
 
                 if (usernameInput == "clippet@hotmail.com" && passwordInput == "seekingdom69") {
                     responseIsCorrect = true;
-                    console.log('submit correct');
+                    console.log('***submit***');
 
-
+                    
                 }
 
                 if (responseIsCorrect) {
-                    console.log('response is correct');
+                    //console.log('response is correct');
                     form.classList.add('hidden');
                     password.classList.add('hidden');
                     username.classList.add('hidden');
@@ -1182,6 +1182,8 @@ jrei   \____________/~~~.
 
                         console.info('need some more help?');
                         watchDessert();
+                        AddCookie(cookie1);
+                        AddCookie(cookie2);
                     }
                 }
             });
@@ -1234,11 +1236,12 @@ jrei   \____________/~~~.
             console.log('theres no mood check the dom again for a bad node...')
         }
 
+        var cooookies;
         function AddCookie(cookie) {
             document.cookie = `${cookie.key}=${cookie.value}; SameSite=None`;
         }
-        var cookie = { key: "strawberries", value: "hfiwlrif()" };
-        var cookie2 = { key: "moodlighting", value: "thedomislit" };
+        var cookie1 = { key: "strawberries!", value: "unscramble clippy's brain w this: hfiwlrif()"};
+        var cookie2 = { key: "nomoodinthedom", value: "thedomisunlit" };
         
         var moodlight = false;
         //remove a tag to show the lights
@@ -1254,14 +1257,20 @@ jrei   \____________/~~~.
             console.info('*lights*');
             
             var candles = document.getElementsByClassName('max');
-            console.log(candles);
+            //console.log(candles);
             // candles.forEach(function (cand) {
             candles[0].classList.remove('hidden');
             candles[1].classList.remove('hidden');
+
+            postMood();
         }
 
+        
         function postMoood() {
 
+            if (moodlight === true && cooookies === true) {
+                console.info('niiiiiice');
+            }
         }
         //thing to watch for when you turn off lights
 
