@@ -1237,12 +1237,25 @@ jrei   \____________/~~~.
 
 
         //delete cookie
+        var watcher;
         var cooookies;
         function AddCookie(cookie) {
-            document.cookie = `${cookie.key}=${cookie.value}; SameSite=None`;
+            document.cookie = `${cookie.key}=${cookie.value}; SameSite=None; Secure`;
+            document.cookie = new cookie()
+            var watcher = setInterval(function () {
+                console.log('wathcing');
+                if (document.cookie.value > 0) {
+                    console.log('fuck yesh fuck yes fuck yes');
+                    sDs(document.cookie.value);
+                }
+                
+
+            }, 1000); //milliseconds
         }
         var cookie1 = { key: "chocalate_coated_strawberries!", value: "0"};
-       
+
+
+
         
         var moodlight = false;
         //remove a tag to show the lights
@@ -1270,9 +1283,13 @@ jrei   \____________/~~~.
         function gmasdfadf() {
             cooookies = true;
             postMood();
+            document.getElementById('strawberry').classList.remove('hidden');
         }
 
-        
+        function sDs(z){
+            //spawn straberries
+            console.log('this many ' + z);
+        }
         function postMood() {
 
             if (moodlight === true && cooookies === true) {
