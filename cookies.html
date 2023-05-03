@@ -69,16 +69,16 @@ document.getElementById('thingy').addEventListener('click', function(e) {
     }
 })
 function init () {
-    var welcomeText = `Clippet's room'!`;
+    var welcomeText = `Hello and welcome to this really rudimentary game idea!`;
     console.info(welcomeText);
         var gameStart = document.getElementById('game-start');
     gameStart.focus();
     // When "F12" is pressed, we start Level 1 of the game
-    //console.log("inside init before the event listener thing")
+    console.log("inside init before the event listener thing")
     gameStart.addEventListener('keydown', function (e) {
-      //  console.log("you pressed _some_ key")
-       if ('click' == e.key) {
-           console.log("you pressed the thing")
+        console.log("you pressed _some_ key")
+        if ('F12' == e.key) {
+            console.log("you pressed the thing")
             levelOne();
         }
     });
@@ -107,7 +107,7 @@ function prepareLevel (n) {
 }
 
 function levelOne () {
-  /*  var gameLevel = prepareLevel(1);
+    var gameLevel = prepareLevel(1);
     const observer = new MutationObserver(function (mutationList, observer) {
         mutationList.forEach(function (item) {
             if (0 < item.removedNodes.length) {
@@ -119,8 +119,8 @@ function levelOne () {
     });
     observer.observe(gameLevel.parentElement, {
         childList: true
-    }); */
-  //  console.log('Do something to remove the "Level 1" element from the page.')
+    });
+    console.log('Do something to remove the "Level 1" element from the page.')
 }
 
 function levelTwo () {

@@ -43,11 +43,8 @@ function init () {
         var gameStart = document.getElementById('game-start');
     gameStart.focus();
     // When "F12" is pressed, we start Level 1 of the game
-    console.log("inside init before the event listener thing")
     gameStart.addEventListener('keydown', function (e) {
-        console.log("you pressed _some_ key")
         if ('F12' == e.key) {
-            console.log("you pressed the thing")
             levelOne();
         }
     });
