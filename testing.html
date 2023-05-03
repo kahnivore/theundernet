@@ -1240,8 +1240,9 @@ jrei   \____________/~~~.
         var watcher;
         var cooookies;
         function AddCookie(cookie) {
-            document.cookie = `${cookie.key}=${cookie.value}; SameSite=None; Secure`;
+            document.cookie = `${cookie.key}=${cookie.value}`;
             document.cookie = new cookie();
+           
             var watcher = setInterval(function () {
                 console.log('wathcing');
                 if (document.cookie.value > 0) {
@@ -1252,7 +1253,7 @@ jrei   \____________/~~~.
 
             }, 1000); //milliseconds
         }
-        var cookie1 = { key: "chocalate_coated_strawberries!", value: "0"};
+        var cookie1 = { key: "chocalate_coated_strawberries!", value: "0" };
 
 
 
