@@ -989,9 +989,9 @@ jrei   \____________/~~~.
 
         var observer = new MutationObserver(function (mutations) {
 
-            console.log("inside mutation observer");
+          //  console.log("inside mutation observer");
             mutations.forEach(function (mutationRecord) {
-                console.log("inside foreach: ", mutationRecord);
+                //console.log("inside foreach: ", mutationRecord);
                 checkPos(mutationRecord.target);
             });
         });
@@ -1241,7 +1241,7 @@ jrei   \____________/~~~.
         var cooookies;
         function AddCookie(cookie) {
             document.cookie = `${cookie.key}=${cookie.value}; SameSite=None; Secure`;
-            document.cookie = new cookie()
+            document.cookie = new cookie();
             var watcher = setInterval(function () {
                 console.log('wathcing');
                 if (document.cookie.value > 0) {
