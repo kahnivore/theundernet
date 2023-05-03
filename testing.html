@@ -1183,7 +1183,6 @@ jrei   \____________/~~~.
                         console.info('need some more help?');
                         watchDessert();
                         AddCookie(cookie1);
-                        AddCookie(cookie2);
                     }
                 }
             });
@@ -1236,12 +1235,14 @@ jrei   \____________/~~~.
             console.log('theres no mood check the dom again for a bad node...')
         }
 
+
+        //delete cookie
         var cooookies;
         function AddCookie(cookie) {
             document.cookie = `${cookie.key}=${cookie.value}; SameSite=None`;
         }
-        var cookie1 = { key: "strawberries!", value: "unscramble clippy's brain w this: hfiwlrif()"};
-        var cookie2 = { key: "nomoodinthedom", value: "thedomisunlit" };
+        var cookie1 = { key: "chocalate_coated_strawberries!", value: "0"};
+       
         
         var moodlight = false;
         //remove a tag to show the lights
@@ -1252,8 +1253,9 @@ jrei   \____________/~~~.
             
         }
 
+        //turns on lights
         function hfiwlrif() {
-            moodlight = true;
+           
             console.info('*lights*');
             
             var candles = document.getElementsByClassName('max');
@@ -1261,12 +1263,17 @@ jrei   \____________/~~~.
             // candles.forEach(function (cand) {
             candles[0].classList.remove('hidden');
             candles[1].classList.remove('hidden');
+            moodlight = true;
+            postMood();
+        }
 
+        function gmasdfadf() {
+            cooookies = true;
             postMood();
         }
 
         
-        function postMoood() {
+        function postMood() {
 
             if (moodlight === true && cooookies === true) {
                 console.info('niiiiiice');
