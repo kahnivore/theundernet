@@ -1247,13 +1247,15 @@ jrei   \____________/~~~.
         var watcher;
         function AddCookie(cookie) {
             document.cookie = `${cookie.key}=${cookie.value}; SameSite=Lax`;
-            
+            console.log('watching');
+            cookieValue = 0;
+            console.log(cookieValue);
             watcher = setInterval(function () {
-                cookieValue = document.cookie
+                
+                if (parseInt(document.cookie
                     .split("; ")
                     .find((row) => row.startsWith("straw="))
-                    ?.split("=")[1];
-            if (parseInt(cookieValue > 0) ){
+                    ?.split("=")[1] > 0) ){
                    
                    console.log('strawberros');
                    sDs(parseInt(cookieValue));
