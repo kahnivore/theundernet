@@ -1266,12 +1266,12 @@ jrei   \____________/~~~.
 
         const cookieValue = document.cookie
             .split("; ")
-            .find((row) => row.startsWith("chocalate_coated_strawberries!="))
+            .find((row) => row.startsWith("straw="))
             ?.split("=")[1];
 
         function showCookieValue() {
             output.textContent = `> ${cookieValue}`;
-            console.log('output.textContent');
+            console.log(output.textContent);
         }
 
         function clearOutputCookieValue() {
@@ -1280,7 +1280,7 @@ jrei   \____________/~~~.
         }
            
         
-        var cookie1 = { key: "chocalate_coated_strawberries!", value: "0" };
+        var cookie1 = { key: "straw", value: "0" };
 
         
 
