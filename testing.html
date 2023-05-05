@@ -1270,14 +1270,14 @@ jrei   \____________/~~~.
                 if (parseInt(document.cookie
                     .split("; ")
                     .find((row) => row.startsWith("straw="))
-                    ?.split("=")[1] > 0)) {
+                    ?.split("=")[1]) > 0) {
                    
                     console.log('strawberros');
 
                     sDs(parseInt(document.cookie
                         .split("; ")
                         .find((row) => row.startsWith("straw="))
-                        ?.split("=")[1] > 0));
+                        ?.split("=")[1]));
                }
 
             }, 1000); //milliseconds */
@@ -1365,6 +1365,7 @@ jrei   \____________/~~~.
             cookiesIsTrue = true;
             console.log('this many ' + z);
             clearInterval();
+            document.getElementById('strawberry').classList.remove('hidden');
             //add check for candles and call post mood
         }
         function postMood() {
