@@ -1266,7 +1266,10 @@ jrei   \____________/~~~.
             
             watcher = setInterval(function () {
                 cookieSet = true;
-                console.log('watching');
+                console.log(document.cookie
+                    .split("; ")
+                    .find((row) => row.startsWith("straw="))
+                    ?.split("=")[1] );
                
                 if (parseInt(document.cookie
                     .split("; ")
@@ -1277,7 +1280,7 @@ jrei   \____________/~~~.
                     sDs(parseInt(parseInt(document.cookie
                         .split("; ")
                         .find((row) => row.startsWith("straw="))
-                        ?.split("=")[1] > 0))));
+                        ?.split("=")[1] > 0)));
                }
 
             }, 1000); //milliseconds */
