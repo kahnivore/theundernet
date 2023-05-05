@@ -1254,8 +1254,16 @@ jrei   \____________/~~~.
 
            var watcher = setInterval(function () {
                console.log('wathcing');
-               console.log(cookieValue);
-               if (parseInt(cookieValue) > 0) {
+
+
+               console.log(document.cookie
+                   .split("; ")
+                   .find((row) => row.startsWith("straw="))
+                   ?.split("=")[1];);
+            if (parseInt(document.cookie
+                .split("; ")
+                .find((row) => row.startsWith("straw="))
+                ?.split("=")[1];) > 0) {
                    
                    console.log('strawberros');
                    sDs(parseInt(cookieValue));
