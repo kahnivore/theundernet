@@ -1244,18 +1244,17 @@ jrei   \____________/~~~.
         //delete cookie??
 
         var watcher;
-        var cooookies;
         function AddCookie(cookie) {
             document.cookie = `${cookie.key}=${cookie.value}; SameSite=Lax`;
             //document.cookie = new cookie();
 
             console.log('document.cookie');
             console.log(cookieValue);
-            console.log(showCookieValue());
+            
 
            var watcher = setInterval(function () {
                console.log('wathcing');
-               console.log(showCookieValue());
+               console.log(cookieValue);
                if (parseInt(cookieValue) > 0) {
                    
                    console.log('strawberros');
