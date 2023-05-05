@@ -1251,14 +1251,14 @@ jrei   \____________/~~~.
 
             console.log('coooook');
 
-          // var watcher = setInterval(function () {
-            //    console.log('wathcing');
-               // if (cookie1.value > 0) {
-                 //   console.log('strawberros');
-                  //  sDs(document.cookie.value);
-                //}
+           var watcher = setInterval(function () {
+               console.log('wathcing');
+               if (cookie1.value > 0) {
+                   console.log('strawberros');
+                   sDs(document.cookie.value);
+               }
 
-            //}, 1000); //milliseconds */
+            }, 1000); //milliseconds */
         } 
            
         
@@ -1344,6 +1344,7 @@ jrei   \____________/~~~.
         function sDs(z){
             //spawn straberries
             console.log('this many ' + z);
+            watcher.disconnect();
         }
         function postMood() {
 
