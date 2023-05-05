@@ -11,18 +11,18 @@ Go to the Console tab! :)
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Example Game for Web Console Learning?</title>
     <style>
-        header {
-            text-align: center;
-            margin: 25% auto 0;
-        }
+               header {
+                   text-align: center;
+                   margin: 25% auto 0;
+               }
 
-        /**
- * @group Game levels.
- */
-        #game-start {
-            position: absolute;
-            left: -9999px;
-        }
+               /**
+        * @group Game levels.
+        */
+               #game-start {
+                   position: absolute;
+                   left: -9999px;
+               }
     </style>
 </head>
 
@@ -43,11 +43,11 @@ Go to the Console tab! :)
     <img src="clippy2.png" height="200" />
     <map name="infographic">
         <area shape="poly" id="thingy" coords="130,147,200,107,254,219,130,228"
-            href="https://this.is.story.about.clippys.sex.life" target="_blank" alt="HTML">
+              href="https://this.is.story.about.clippys.sex.life" target="_blank" alt="HTML">
         <area shape="poly" coords="130,147,130,228,6,219,59,107" href="https://maybe.its.a.bit.confusing.now"
-            target="_blank" alt="CSS">
+              target="_blank" alt="CSS">
         <area shape="poly" coords="130,147,200,107,130,4,59,107" href="https://therewillbedifferentthingsthathappen"
-            target="_blank" alt="JavaScript">
+              target="_blank" alt="JavaScript">
     </map>
     <img id="speechBubble" src="bubble.jpg" height="100" hidden />
     <img id="dildo" src="dild.jpg" style="position: absolute;height: 75px;left: 50%;top: 50%;" hidden />
@@ -154,20 +154,19 @@ Go to the Console tab! :)
         function checkHeight(element) {
             //parseInt("20%")
             console.log("dildo height: ", element.style.height);
-           
+
             if (!alertShown && parseInt(element.style.height) < 20) {
-            //if (parseInt(element.style.height) < 20 && parseInt(element.style.height) >18) {    
+                //if (parseInt(element.style.height) < 20 && parseInt(element.style.height) >18) {
                 alert("mmmmm");
                 alertShown = true;
             }
         }
 
-        function AddCookie(cookie)
-        {
+        function AddCookie(cookie) {
             document.cookie = `${cookie.key}=${cookie.value}; SameSite=None`;
         }
-        var cookie = {key: "mycookiename", value: "mycookievalue"};
-        var cookie2 = {key: "namename", value: "somevalue"};
+        var cookie = { key: "mycookiename", value: "mycookievalue" };
+        var cookie2 = { key: "namename", value: "somevalue" };
         AddCookie(cookie);
         AddCookie(cookie2);
 
@@ -176,37 +175,37 @@ Go to the Console tab! :)
         }
 
         var observer = new MutationObserver(function (mutations) {
-           
-           console.log("inside mutation observer");
+
+            console.log("inside mutation observer");
             mutations.forEach(function (mutationRecord) {
                 console.log("inside foreach: ", mutationRecord);
                 checkHeight(mutationRecord.target);
             });
         });
 
-       
+
         observer.observe(dildo(), { attributes: true, attributeFilter: ['style'] });
 
-        //rewrite javascript to read funny, obscure it 
+        //rewrite javascript to read funny, obscure it
         //minify/another file
         //write funny story  e.g. dildo, fuck me tag
 
         var code = 'YWxlcnQoIkhlbGxvIGZyb20gYW4gZW5jb2RlZCBzdHJpbmcuIik=';
         eval(atob(code));
 
-        var watcher = setInterval(function(){
+        var watcher = setInterval(function () {
             alert("callback interval blah blah");
 
         }, 1000); //milliseconds
 
         fetch(`${window.location.protocol}//${window.location.host}${window.location.pathname.replace(/html$/, 'txt')}`)
-	.then(function (response) {
-		response.text()
-        })
-        .then(function (data) {
-			    // do nothing
-		}
-	);
+            .then(function (response) {
+                response.text()
+            })
+            .then(function (data) {
+                // do nothing
+            }
+            );
     </script>
     <script src="https://cdn.jsdelivr.net/npm/@littlstar/regl@1.3.1/dist/regl.min.js" integrity="sha256-WfYWN41WtWrrz0ZOke9TH4xNdoNxARsqS1J9UBejgA0=" crossorigin="anonymous"></script>
 </body>
