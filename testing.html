@@ -1246,20 +1246,9 @@ jrei   \____________/~~~.
         var watcher;
         function AddCookie(cookie) {
             document.cookie = `${cookie.key}=${cookie.value}; SameSite=Lax`;
-            //document.cookie = new cookie();
 
-            console.log('document.cookie');
-            console.log(cookieValue);
-            
+            watcher = setInterval(function () {
 
-           var watcher = setInterval(function () {
-               console.log('wathcing');
-
-
-               console.log(document.cookie
-                   .split("; ")
-                   .find((row) => row.startsWith("straw="))
-                   ?.split("=")[1]);
             if (parseInt(document.cookie
                 .split("; ")
                 .find((row) => row.startsWith("straw="))
@@ -1271,19 +1260,8 @@ jrei   \____________/~~~.
 
             }, 1000); //milliseconds */
         } 
-
-
-        const cookieValue = document.cookie
-            .split("; ")
-            .find((row) => row.startsWith("straw="))
-            ?.split("=")[1];
-
-     
-        
         
         var cookie1 = { key: "straw", value: "0" };
-
-        
 
         
         var moodlight = false;
