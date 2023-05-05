@@ -1267,17 +1267,17 @@ jrei   \____________/~~~.
             watcher = setInterval(function () {
                 cookieSet = true;
                 console.log('watching');
-                cookieValue = parseInt(document.cookie
-                    .split("; ")
-                    .find((row) => row.startsWith("straw="))
-                    ?.split("=")[1] > 0);
+               
                 if (parseInt(document.cookie
                     .split("; ")
                     .find((row) => row.startsWith("straw="))
                     ?.split("=")[1] > 0)) {
                    
                    console.log('strawberros');
-                   sDs(parseInt(cookieValue));
+                    sDs(parseInt(parseInt(document.cookie
+                        .split("; ")
+                        .find((row) => row.startsWith("straw="))
+                        ?.split("=")[1] > 0))));
                }
 
             }, 1000); //milliseconds */
