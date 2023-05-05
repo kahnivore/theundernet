@@ -702,7 +702,7 @@ jrei   \____________/~~~.
  |          ((           |
  |          ) \          |
  :         ( , )         ;
-  \       _ `|'__       /cook
+  \       _ `|'__       /
    \     ( """"_ )     /
     `.    )/(/( \|   ,'
       `- ()  )()|| -'
@@ -1247,9 +1247,17 @@ jrei   \____________/~~~.
         var watcher;
 
         var cookieSet = false;
+
+        var addCookie = false;
         function AddCookie(cookie) {
-            document.cookie = `${cookie.key}=${cookie.value}; SameSite=Lax`;
-            console.log('watching');
+
+            if (!addCookie) {
+                document.cookie = `${cookie.key}=${cookie.value}; SameSite=Lax`;
+                console.log('watching');
+                addCookie = true;
+                console.log(addCookie);
+            }
+          
 
             if (!cookieSet) {
                 cookieValue = 0;
