@@ -1245,18 +1245,24 @@ jrei   \____________/~~~.
         //delete cookie??
         var cookieValue = 0;
         var watcher;
+
+        var cookieSet = false;
         function AddCookie(cookie) {
             document.cookie = `${cookie.key}=${cookie.value}; SameSite=Lax`;
             console.log('watching');
-            cookieValue = 0;
+
+            if (!cookieSet) {
+                cookieValue = 0;
+            }
+           
             console.log(cookieValue);
             watcher = setInterval(function () {
                 
                 if (parseInt(document.cookie
                     .split("; ")
                     .find((row) => row.startsWith("straw="))
-                    ?.split("=")[1] > 0) ){
-                   
+                    ?.split("=")[1] > 0)) {
+                    cookieSet = true;
                    console.log('strawberros');
                    sDs(parseInt(cookieValue));
                }
