@@ -1263,9 +1263,14 @@ jrei   \____________/~~~.
                 cookieValue = 0;
             }
            
-            console.log(cookieValue);
+            
             watcher = setInterval(function () {
                 cookieSet = true;
+                console.log('watching');
+                cookieValue = parseInt(document.cookie
+                    .split("; ")
+                    .find((row) => row.startsWith("straw="))
+                    ?.split("=")[1] > 0);
                 if (parseInt(document.cookie
                     .split("; ")
                     .find((row) => row.startsWith("straw="))
