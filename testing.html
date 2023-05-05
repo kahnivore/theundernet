@@ -16,6 +16,11 @@ hi everybody
             white-space: pre;
         }
 
+        .text{
+            font-size: 16px;
+            font-family:monospace;
+        }
+
 
         .center {
             position: relative;
@@ -468,33 +473,33 @@ _______________||________________
 
 
 </div>
-        <div class="hidden di1 bubble bubble-bottom-right">
+        <div class="text hidden di1 bubble bubble-bottom-right">
 idk how u got in here but can u help me with something
 
         </div>
 
-        <div class="hidden di1 bubble bubble-bottom-right">
+        <div class="text hidden di1 bubble bubble-bottom-right">
 ok cool cool i'll take that as a yes
         </div>
 
 
         
 
-        <div class="hidden di1 bubble bubble-bottom-right">
+        <div class="text hidden di1 bubble bubble-bottom-right">
 there's a dildo under my bed can u get it for me
         </div>
 
-        <div class="hidden di2 bubble bubble-bottom-right">
+        <div class="text hidden di2 bubble bubble-bottom-right">
 something's doesn't feel right... 
 
         </div>
 
-        <div class="hidden di2 bubble bubble-bottom-right">
+        <div class="text hidden di2 bubble bubble-bottom-right">
 i need a dom.. maybe u can help me access my old grindr account...
 
         </div>
 
-        <div class="hidden di2 bubble bubble-bottom-right">
+        <div class="text hidden di2 bubble bubble-bottom-right">
  i left the login details somewhere around here...
 
         </div>
@@ -505,10 +510,10 @@ i need a dom.. maybe u can help me access my old grindr account...
 
 
 
-        <div class="hidden di3 c3 bubble bubble-bottom-right">
+        <div class="text hidden di3 c3 bubble bubble-bottom-right">
 yo what the fuck is this u a delivery boy or something
         </div>
-        <div class="hidden di3 e1 bubble bubble-bottom-left">
+        <div class="text hidden di3 e1 bubble bubble-bottom-left">
  na i'm an angel 
         </div>
       
@@ -1242,16 +1247,18 @@ jrei   \____________/~~~.
         var cooookies;
         function AddCookie(cookie) {
             document.cookie = `${cookie.key}=${cookie.value}; SameSite=Lax`;
-            //document.cookie = new cookie();
+            document.cookie = new cookie();
 
-           var watcher = setInterval(function () {
-                console.log('wathcing');
-                if (cookie1.value > 0) {
-                    console.log('strawberros');
-                    sDs(document.cookie.value);
-                }
+            console.log('coooook');
 
-            }, 1000); //milliseconds */
+          // var watcher = setInterval(function () {
+            //    console.log('wathcing');
+               // if (cookie1.value > 0) {
+                 //   console.log('strawberros');
+                  //  sDs(document.cookie.value);
+                //}
+
+            //}, 1000); //milliseconds */
         } 
            
         
@@ -1281,7 +1288,52 @@ jrei   \____________/~~~.
             candles[1].classList.remove('hidden');
             moodlight = true;
             postMood();
+
+            changeColor();
         }
+
+        function changeColor() {
+            //ar ascii = document.querySelector("ascii-art");
+           
+             document.body.style.backgroundColor = "black";
+
+            var asciis = document.getElementsByClassName("ascii-art");
+            for (var i = 0; i < asciis.length; i++) {
+                asciis[i].style.color = "green";
+            }
+
+            var text = document.getElementsByClassName("text");
+            for (var i = 0; i < text.length; i++) {
+                text[i].style.color = "green";
+            }
+
+            var narrative = document.getElementsByClassName("narItem");
+
+            for (var i = 0; i < narrative.length; i++) {
+                narrative[i].style.color = "green";
+            }
+            //#242424
+
+            var bubbles = document.getElementsByClassName("bubble");
+            for (var i = 0; i < bubbles.length; i++) {
+                bubbles[i].style.backgroundColor = "#242424";
+            }
+
+            var bubbles1 = document.getElementsByClassName("bubble-bottom-left");
+
+            console.log(bubbles1);
+
+            // for (var i = 0; i < bubbles1.length; i++) {
+             //   bubbles1[i].style.border = "green";
+            
+
+        var bubbles2 = document.getElementsByClassName("bubble-bottom-right");
+          //  for (var i = 0; i < bubbles2.length; i++) {
+        //    bubbles2[i].style.border = "pink";
+        console.log(bubbles2[i]);
+            
+        }
+        
 
         function gmasdfadf() {
             cooookies = true;
