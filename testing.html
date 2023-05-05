@@ -1266,17 +1266,14 @@ jrei   \____________/~~~.
             
             watcher = setInterval(function () {
                 cookieSet = true;
-                console.log(document.cookie
-                    .split("; ")
-                    .find((row) => row.startsWith("straw="))
-                    ?.split("=")[1] );
                
                 if (parseInt(document.cookie
                     .split("; ")
                     .find((row) => row.startsWith("straw="))
                     ?.split("=")[1] > 0)) {
                    
-                   console.log('strawberros');
+                    console.log('strawberros');
+
                     sDs(parseInt(document.cookie
                         .split("; ")
                         .find((row) => row.startsWith("straw="))
@@ -1356,21 +1353,23 @@ jrei   \____________/~~~.
             
         }
         
-
+        var cookiesIsTrue;
         function gmasdfadf() {
-            cooookies = true;
+            cookiesIsTrue = true;
             postMood();
             document.getElementById('strawberry').classList.remove('hidden');
         }
 
         function sDs(z){
             //spawn straberries
+            cookiesIsTrue = true;
             console.log('this many ' + z);
             clearInterval();
+            //add check for candles and call post mood
         }
         function postMood() {
 
-            if (moodlight === true && cooookies === true) {
+            if (moodlight && cookiesIsTrue) {
                 console.info('niiiiiice');
             }
         }
