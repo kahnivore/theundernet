@@ -1249,7 +1249,9 @@ jrei   \____________/~~~.
             document.cookie = `${cookie.key}=${cookie.value}; SameSite=Lax`;
             //document.cookie = new cookie();
 
-            console.log('coooook');
+            console.log('document.cookie');
+            console.log(cookieValue);
+            console.log(showCookieValue());
 
            var watcher = setInterval(function () {
                console.log('wathcing');
