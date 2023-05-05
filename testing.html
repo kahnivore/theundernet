@@ -1253,15 +1253,31 @@ jrei   \____________/~~~.
 
            var watcher = setInterval(function () {
                console.log('wathcing');
-               console.log(document.cookie.value);
-               if (document.cookie.value > 0) {
+               console.log(showCookieValue());
+               if (parseInt(cookieValue) > 0) {
                    
                    console.log('strawberros');
-                   sDs(document.cookie.value);
+                   sDs(parseInt(cookieValue));
                }
 
             }, 1000); //milliseconds */
         } 
+
+
+        const cookieValue = document.cookie
+            .split("; ")
+            .find((row) => row.startsWith("cookie1="))
+            ?.split("=")[1];
+
+        function showCookieValue() {
+            output.textContent = `> ${cookieValue}`;
+            console.log('output.textContent');
+        }
+
+        function clearOutputCookieValue() {
+           // const output = document.getElementById("cookie-value");
+           // output.textContent = "";
+        }
            
         
         var cookie1 = { key: "chocalate_coated_strawberries!", value: "0" };
