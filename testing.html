@@ -1243,17 +1243,17 @@ jrei   \____________/~~~.
 
 
         //delete cookie??
-
+        var cookieValue = 0;
         var watcher;
         function AddCookie(cookie) {
             document.cookie = `${cookie.key}=${cookie.value}; SameSite=Lax`;
-
+            
             watcher = setInterval(function () {
-
-            if (parseInt(document.cookie
-                .split("; ")
-                .find((row) => row.startsWith("straw="))
-                ?.split("=")[1]) > 0) {
+                cookieValue = document.cookie
+                    .split("; ")
+                    .find((row) => row.startsWith("straw="))
+                    ?.split("=")[1];
+            if (parseInt(cookieValue > 0) ){
                    
                    console.log('strawberros');
                    sDs(parseInt(cookieValue));
@@ -1262,7 +1262,7 @@ jrei   \____________/~~~.
             }, 1000); //milliseconds */
         } 
         
-        var cookie1 = { key: "straw", value: "0" };
+        var cookie1 = { key: "straw", value: cookieValue};
 
         
         var moodlight = false;
