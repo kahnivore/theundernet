@@ -1382,32 +1382,12 @@ jrei   \____________/~~~.
         }
 
 
-        //network stuff
-    /*    fetch(`${window.location.protocol}//${window.location.host}${window.location.pathname.replace(/html$/, 'txt')}`)
-            .then(function (response) {
-                response.text()
-            })
-            .then(function (data) {
-               console.log('someone is knocking at the door');
-            }
-        ); */
-
-      /* async function fetchResponse() {
-            
-            await fetch(`${window.location.protocol}//${window.location.host}${window.location.pathname.replace(/html$/, 'txt')}`)
-                .then(function (response) {
-                    response.text()
-                        .then(function (data) {
-                            console.log('someone is knocking at the door');
-
-                        });
-                } */
           
-        async function fetchResponse() {
+        async function logResponseText() {
             const response = await fetch(`${window.location.protocol}//${window.location.host}${window.location.pathname.replace(/html$/, 'txt')}`);
             const t = await response.text();
-                        console.log(t);
-                    }
+           // console.log(t);
+        }
 
 
         //delete cookie??
