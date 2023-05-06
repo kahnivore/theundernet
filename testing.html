@@ -1368,13 +1368,8 @@ jrei   \____________/~~~.
                             unlockIeTips = 2;
                         }
                         if (unlockIeTips == 2) {
-                            console.info('oh yes the passwords are only for one-time use');
-                            unlockIeTips = 3;
-                        }
-                        if (unlockIeTips == 3) {
-                            console.info('hmmm seems like this unit is old and a bit scrambled i cant actually fetch it');
-
-                           fetch(`${window.location.protocol}//${window.location.host}${window.location.pathname.replace(/html$/, 'txt')}`)
+                            console.info('hmmm seems like this unit is old and a bit scrambled i cant access it');
+                            fetch(`${window.location.protocol}//${window.location.host}${window.location.pathname.replace(/html$/, 'txt')}`)
                                 .then(function (response) {
                                     response.text()
                                 })
@@ -1382,22 +1377,48 @@ jrei   \____________/~~~.
                                     console.info(data);
                                 }
                                 );
+                            unlockIeTips = 3;
+                        }
+
+                        if (unlockIeTips == 3) {
+                            console.info('everytime someone tries to enter a fetch request is sent');
+                            unlockIeTips = 4;
+                        }
+
+                        if (unlockIeTips == 4) {
+                            console.info('its suppose to forward the response through to me but it doesnt seem to be working');
+                            unlockIeTips = 5;
+                          
+                        }
+
+
+                        if (unlockIeTips == 5) {
+                            console.info('you can find the RESPONSE under the network tab');
+
+                            unlockIeTips = 6;
+                        }
+
+                        if (unlockIeTips > 5 || unlockIeTips <-1) {
+
                         }
 
                     }
 
-
                 }
                 
-            
             });
 
-            if (chapter3Done) {
+            if (!chapter3Done && netpass) {
                 chapter4();
                // chapter3Done = true;
             }
         }
 
+        var netpass = false;
+
+        function kasdjfasdfj() {
+            netpass = true;
+        }
         var n = 0;
         hasFinishedDi = false;
         function chapter4() {
@@ -1511,12 +1532,10 @@ jrei   \____________/~~~.
                 addCookie = true;
                 console.log(addCookie);
             }
-          
 
             if (!cookieSet) {
                 cookieValue = 0;
             }
-           
             
             watcher = setInterval(function () {
                 cookieSet = true;
@@ -1551,21 +1570,22 @@ jrei   \____________/~~~.
 
         //turns on lights
         function hfiwlrif() {
-           
-            console.info('*lights*');
-            
-            var candles = document.getElementsByClassName('max');
-            //console.log(candles);
-            // candles.forEach(function (cand) {
-            candles[0].classList.remove('hidden');
-            candles[1].classList.remove('hidden');
-            moodlight = true;
-            postMood();
+            if (netpass) {
+                console.info('*lights*');
+                var candles = document.getElementsByClassName('max');
+                //console.log(candles);
+                // candles.forEach(function (cand) {
+                candles[0].classList.remove('hidden');
+                candles[1].classList.remove('hidden');
+                moodlight = true;
+                postMood();
 
-            changeColor();
+                changeColor();
+            }
         }
 
         function changeColor() {
+
             //ar ascii = document.querySelector("ascii-art");
            
              document.body.style.backgroundColor = "black";
@@ -1605,22 +1625,27 @@ jrei   \____________/~~~.
         console.log(bubbles2[i]);
             
         }
-        
+
         var cookiesIsTrue;
+
         function gmasdfadf() {
-            cookiesIsTrue = true;
-            postMood();
-            document.getElementById('strawberry').classList.remove('hidden');
+            if (netpass) {
+                cookiesIsTrue = true;
+                postMood();
+                document.getElementById('strawberry').classList.remove('hidden');
+            }
         }
 
-        function sDs(z){
-            //spawn straberries
-            cookiesIsTrue = true;
-            console.log('this many ' + z);
-            clearInterval();
-            document.getElementById('strawberry').classList.remove('hidden');
-            postMood();
+        function sDs(z) {
+            if (netpass) {
+                //spawn straberries
+                cookiesIsTrue = true;
+                console.log('this many ' + z);
+                clearInterval();
+                document.getElementById('strawberry').classList.remove('hidden');
+                postMood();
             //add check for candles and call post mood
+            }
         }
         function postMood() {
 
