@@ -14,6 +14,7 @@ hi everybody
             font-size: 16px;
             font-family: monospace;
             white-space: pre;
+            cursor: pointer;
         }
 
         .text{
@@ -55,7 +56,7 @@ hi everybody
 
         .char {
             font-size: 20px;
-            position: relative;
+            
         }
 
         .top{
@@ -103,8 +104,8 @@ hi everybody
             right: 3%;
         }
 
-        #clippy{
-            position: absolute;
+       #clippyOld{
+            position:fixed;
             left: 33%;
             top: 35%;
         }
@@ -301,6 +302,14 @@ hi everybody
             margin: 0 auto;
             padding: 0;
         }
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+
+       
     </style>
 
 
@@ -454,13 +463,11 @@ _______________||________________
 
 
         </div>
-    
 
-<div id="clippy" class="ascii-art hidden">
-
+<div id="clippyOld" class="ascii-art hidden"  >
       _____
      |     |
-    (.)   (.)
+    ( )   ( )
      |     |
      |     |
      | |   |
@@ -473,6 +480,30 @@ _______________||________________
 
 
 </div>
+
+
+<div id="clippy" class="ascii-art noFrills hidden" style="position: absolute; top:202px; left: 263px">
+      _____
+     |     |
+    ( )   ( )
+     |     |
+     |     |
+     | |   |
+     | |   |  /
+     |	\__/ |
+     |      /
+     \_____/
+
+    
+
+
+</div>
+
+
+ <div id="pupilLeft" class="ascii-art noFrills hidden" style="position: absolute; left: 306.5px; top: 259px">•</div>
+        
+<div id="pupilRight" class="ascii-art noFrills hidden" style="position: absolute; left: 359px; top: 259px">•</div>
+
         <div class="text hidden di1 bubble bubble-bottom-right">
 idk how u got in here but can u help me with something
 
@@ -586,17 +617,28 @@ jrei   \____________/~~~.
 
 
 
-        <div id="ie" class="ascii-art char hidden">
-
+        <div id="ie" class="ascii-art char hidden" style="position: absolute; top: 80px; left: 10px">
   ___ 
  / _ \
 |  __/
  \___|
-
+ <div id="bicycle" class="ascii-art" style="position: absolute; top: 70px; ">
+             __
+  ,--.      <__)
+  `- |________7
+     |`.      |\
+  .--|. \     |.\--.
+ /   j \ `.7__j__\  \
+|   o   | (o)____O)  |
+ \     /   J  \     /
+  `---'        `---'   
+</div>
 
 
 
         </div>
+
+
 
 
         <div id="strawberry" class="ascii-art hidden left">
@@ -774,14 +816,70 @@ jrei   \____________/~~~.
 
 
             </div>
+
+   
         </div>
+  
    </div> 
    
     <script>
 
-        var gameHasStarted = false;
 
+        
+
+        var gameHasStarted = false;
+        var mouseInBox = false;
+        var cursorX =0;
+        var cursorY =0;
         function init() {
+
+            
+            var gamElement = document.getElementById('game-box');
+
+
+            addEventListener('mousemove', function (e) {
+
+
+                var boxWidth = gamElement.clientWidth;
+                var boxHeight = gamElement.clientHeight;
+
+                var xCutoffMin = window.innerWidth / 2 - boxWidth;
+                var yCutoffMin = 5 / 100 * gamElement.clientHeight;
+
+                if (e.pageX < xCutoffMin || e.pageY < yCutoffMin || e.pageX > xCutoffMin + boxWidth || e.pageY > yCutoffMin + boxHeight) {
+                    mouseInBox = false;
+                }
+                else {
+                    mouseInBox = true;
+                }
+                
+               
+
+
+
+                //for left pupil
+                var pupL = this.document.getElementById('pupilLeft');
+                var pL = parseFloat(pupL.style.left);
+                var pT = parseFloat(pupL.style.top);
+
+                var pupR = this.document.getElementById('pupilRight');
+                var pRL = parseFloat(pupR.style.left);
+                var pRT = parseFloat(pupR.style.top);
+               
+                var mPosLeftX = e.pageX - window.innerWidth / 2 - pL + 400;
+                var mPosLeftY = e.pageY - pT - (5 / 100 * this.window.innerHeight);
+                //the mouse position mapped to the pupil pos
+                leftEyePos(mPosLeftX, mPosLeftY);
+
+                var mPosRightX = e.pageX - window.innerWidth / 2 - pRL + 400;
+                var mPosRightY = e.pageY - pRT - (5 / 100 * this.window.innerHeight);
+                //the mouse position mapped to the pupil pos
+                rightEyePos(mPosRightX, mPosRightY);
+            });
+
+
+
+
 
             if (!gameHasStarted) {
                 intro();
@@ -789,7 +887,73 @@ jrei   \____________/~~~.
                 cookieValue = 0;
             }
         }
+       
+       
+        var eyeRadius = 100;
+        function leftEyePos(mPosX, mPosY) {
 
+            
+            var leftPupilStyle = document.getElementById('pupilLeft').style;
+
+            
+            var transX;
+            var transY;
+           // if (mouseInBox) {
+                if (Math.abs(mPosY) < eyeRadius) {
+                    transY = 0;
+                }
+                else if (mPosY > 0) {
+                    transY = 5;
+                }
+                else if (mPosY < 0) {
+
+                    transY = -5;
+                }
+                if (Math.abs(mPosX) < eyeRadius) {
+                    transX = 0;
+                }
+                else if (mPosX > eyeRadius) {
+                    transX = 5;
+                }
+                else if (mPosX < eyeRadius) {
+                    transX = -5;
+                }
+           // }
+           // else {
+              //  leftPupilStyle.transform.remove();
+            //}
+
+            
+            leftPupilStyle.transform = `translate(${transX}px, ${transY}px)`;
+        }
+
+        function rightEyePos(mPosX, mPosY) {
+
+            var rightPupilStyle = document.getElementById('pupilRight').style;
+            var transX;
+            var transY;
+
+            if (Math.abs(mPosY) < eyeRadius) {
+                transY = 0;
+            }
+            else if (mPosY > eyeRadius) {
+                transY = 5;
+            }
+            else if (mPosY < eyeRadius) {
+
+                transY = -5;
+            }
+            if (Math.abs(mPosX) < eyeRadius) {
+                transX = 0;
+            }
+            else if (mPosX > eyeRadius) {
+                transX = 5;
+            }
+            else if (mPosX < eyeRadius) {
+                transX = -5;
+            }
+            rightPupilStyle.transform = `translate(${transX}px, ${transY}px)`;
+        }
        
         var hasFinishedTextAnim = false;
         var hasPassedLevel1 = false;
@@ -799,35 +963,9 @@ jrei   \____________/~~~.
             
             var welcomeText = `°✧  🎀  𝒸𝓁𝒾𝓅𝓅𝓎'𝓈 𝒷𝓇𝒶𝒾𝓃  🎀  ✧°`;
             console.info(welcomeText);
-
-            
-
-         
-
-           // var c = getWidth() / 2;
-
             var theText = document.getElementById('introTextThe');
-            //theText.style.diplay = 'block';
-
-           // var theWidth = theText.scrollWidth;
-
-          //  var halfTheWidth = theWidth / 2;
-
-           // var theCenterTarget = c - theWidth/2;
             theText.style.transform = "translateX(-580px)";
             theText.style.transition = "all 5s";
-
-
-           
-         //   var underNetCenterTarget = c + theWidth/2 + 10;
-
-           
-
-            
-            //ok so first click to get to net
-            //animate the and net properly
-            //then 
-
             var undernetText = document.getElementById('introTextUndernet');
             
 
@@ -931,6 +1069,8 @@ jrei   \____________/~~~.
 
 
             var clippy = document.getElementById('clippy');
+            document.getElementById('pupilLeft').classList.remove('hidden');
+            document.getElementById('pupilRight').classList.remove('hidden');
             clippy.classList.remove('hidden');
 
 
@@ -1241,14 +1381,28 @@ jrei   \____________/~~~.
             console.log('theres no mood check the dom again for a bad node...')
         }
 
-        fetch(`${window.location.protocol}//${window.location.host}${window.location.pathname.replace(/html$/, 'txt')}`)
+
+        //network stuff
+    /*    fetch(`${window.location.protocol}//${window.location.host}${window.location.pathname.replace(/html$/, 'txt')}`)
             .then(function (response) {
                 response.text()
             })
             .then(function (data) {
                console.log('someone is knocking at the door');
             }
-        );
+        ); */
+
+        //async function fetchResponse() {
+            
+            await fetch(`${window.location.protocol}//${window.location.host}${window.location.pathname.replace(/html$/, 'txt')}`)
+                .then(function (response) {
+                    response.text()
+                        .then(function (data) {
+                            console.log('someone is knocking at the door');
+
+                        });
+        //  }
+          
 
 
         //delete cookie??
@@ -1432,6 +1586,21 @@ jrei   \____________/~~~.
 
 
         document.addEventListener('DOMContentLoaded', init);
+
+
+
+
+        //easter eggs
+        //add like a poem in the code 
+        //in the network responses
+
+        //do the network request on knock????
+
+       //sound effects? 
+
+
+        //
+
     </script>
     
 </body>
