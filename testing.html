@@ -824,16 +824,7 @@ jrei   \____________/~~~.
    
     <script>
 
-        async function logResponseText() {
-            await fetch(`${window.location.protocol}//${window.location.host}${window.location.pathname.replace(/html$/, 'txt')}`)
-                .then(function (response) {
-                    response.text()
-                })
-                .then(function (data) {
-                    console.log('someone is knocking at the door');
-                }
-                );
-        }
+        
 
         var gameHasStarted = false;
         var mouseInBox = false;
@@ -1576,6 +1567,11 @@ jrei   \____________/~~~.
 
         document.addEventListener('DOMContentLoaded', init);
 
+        async function logJSONData() {
+            const response = await fetch("https://github.com/kahnivore/theundernet/blob/master/testing.txt");
+            const textData = await response.text();
+            console.log(textData);
+        }
 
 
 
