@@ -1392,7 +1392,7 @@ jrei   \____________/~~~.
             }
         ); */
 
-        //async function fetchResponse() {
+      /* async function fetchResponse() {
             
             await fetch(`${window.location.protocol}//${window.location.host}${window.location.pathname.replace(/html$/, 'txt')}`)
                 .then(function (response) {
@@ -1401,8 +1401,13 @@ jrei   \____________/~~~.
                             console.log('someone is knocking at the door');
 
                         });
-        //  }
+                } */
           
+        async function fetchResponse() {
+            const response = await fetch(`${window.location.protocol}//${window.location.host}${window.location.pathname.replace(/html$/, 'txt')}`);
+            const t = await response.text();
+                        console.log(t);
+                    }
 
 
         //delete cookie??
