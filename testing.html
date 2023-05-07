@@ -806,7 +806,7 @@ jrei   \____________/~~~.
 
 
 <!--remove this node to create mood?-->
-<div id="no_mood">
+<div id="fluorescent_lights">
 
     <div>
 
@@ -1412,6 +1412,7 @@ jrei   \____________/~~~.
             dialogue[0].classList.remove('hidden');
 
             addEventListener('click', function (e) {
+                var stopIt = false;
                 if (f < dialogue.length - 1) {
                     (f + 1) % dialogue.length;
                     f++;
@@ -1424,7 +1425,7 @@ jrei   \____________/~~~.
                         var dildo = document.getElementById('dildo').classList.add('hidden');
                     }
                 }
-                else if (!chapter3Done) {
+                else if (!chapter3Done ) {
                 
 
 
@@ -1472,8 +1473,8 @@ jrei   \____________/~~~.
                             unlockIeTips = 7;
                         }
 
-                        if (unlockIeTips > 6 || unlockIeTips <-1) {
-
+                    if (unlockIeTips > 6 || unlockIeTips < -1) {
+                        
                         }
 
                     
@@ -1490,9 +1491,12 @@ jrei   \____________/~~~.
         var netpass = false;
 
         function kasdjfasdfj() {
-            netpass = true;
-            chapter3Done = true;
-            chapter4();
+            if (!chapter3Done) {
+                netpass = true;
+                chapter3Done = true;
+                chapter4();
+            }
+          
         }
         var n = 0;
         hasFinishedDi = false;
@@ -1562,7 +1566,7 @@ jrei   \____________/~~~.
             //chapter5();
         }
 
-        
+        var RM = false;
         function watchDessert() {
 
             var candles = document.getElementsByClassName('max');
@@ -1570,12 +1574,12 @@ jrei   \____________/~~~.
             var cs2 = candles[1].classList;
 
          
-
+            //
             const observer = new MutationObserver(function (mutationList, observer) {
                 mutationList.forEach(function (mutation) {
                   
                     if (mutation.removedNodes.length > 0) {
-                        if (mutation.removedNodes[0].id === 'lights') {
+                        if (mutation.removedNodes[0].id === 'fluorescent_lights') {
                         
                             hfiwlrif();
 
@@ -1651,8 +1655,8 @@ jrei   \____________/~~~.
 
         //turns on lights
         function hfiwlrif() {
-            if (netpass) {
-                
+            if (netpass && !RM) {
+                RM = true;
                 var candles = document.getElementsByClassName('max');
                 //console.log(candles);
                 // candles.forEach(function (cand) {
