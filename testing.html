@@ -63,8 +63,6 @@ hi everybody
         }
 
         .top{
-            
-            
             position: absolute;
             top: 0%;
         }
@@ -87,8 +85,6 @@ hi everybody
             top: 15%;
             
         }
-
-        
 
         .righttt{
             position:absolute;
@@ -232,6 +228,14 @@ hi everybody
         }
 
         .di4 {
+            position: absolute;
+            bottom: 320px;
+            right: 275px;
+            font-family: monospace;
+            white-space: pre;
+        }
+
+        .di5 {
             position: absolute;
             bottom: 320px;
             right: 275px;
@@ -567,9 +571,51 @@ i need a dom.. maybe u can help me access my old grindr account...
 yo what the fuck is this u a delivery boy or something
         </div>
         <div class="text hidden di4 e1 bubble bubble-bottom-left">
- na i'm an angel 
+ na i'm an angel and this is my ebike  
         </div>
-      
+        <div class="text hidden di4 c1 bubble bubble-bottom-left">
+oh.. i guess that's how u got here so fast
+        </div>
+        <div class="text hidden di4 c1 bubble bubble-bottom-left">
+i can't keep up with all this new technology it's a bit of a sore point at the moment 
+        </div>
+        <div class="text hidden di4 c1 bubble bubble-bottom-left">
+no one wants an old paperclip anymore 
+        </div>
+<div class="text hidden di4 e1 bubble bubble-bottom-left">
+at least u didn't get replaced by 'edge'
+        </div>
+<div class="text hidden di4 e1 bubble bubble-bottom-left">
+it's so on the nose 
+        </div>
+<div class="text hidden di4 e1 bubble bubble-bottom-left">
+speaking of.. u wana get to it? 
+ </div>
+<div class="text hidden di4 e1 bubble bubble-bottom-left">
+our plan is finally coming togeth- 
+ </div>
+<div class="text hidden di4 c1 bubble bubble-bottom-left">
+wait! let's set the mood to something a little more romantic 
+        </div>
+<div class="text hidden di4 c1 bubble bubble-bottom-left">
+our little voyeur over here is proving quite useful 
+        </div>
+<div class="text hidden di4 c1 bubble bubble-bottom-left">
+go fetch us some uh... chocolate-covered strawberries 
+</div>
+
+ <div class="text hidden di5 e1 bubble bubble-bottom-left">
+woah that's a lot of strawberries 
+</div>     
+ <div class="text hidden di5 c1 bubble bubble-bottom-left">
+ok yeah idk if this is exactly what i was imagining
+</div>   
+ <div class="text hidden di5 c1 bubble bubble-bottom-left">
+how about u get rid of the lights 
+</div>  
+ <div class="text hidden di5 c1 bubble bubble-bottom-left">
+and maybe urself while ur at it 
+</div> 
 
    
 
@@ -1243,6 +1289,7 @@ jrei   \____________/~~~.
             var username = this.document.getElementById('username');
             var password = this.document.getElementById('password');
             var submit = this.document.getElementById('submit');
+
             addEventListener('click', function (e) {
                 if (j < dialogue.length - 1) {
                     (j + 1) % dialogue.length;
@@ -1355,9 +1402,9 @@ jrei   \____________/~~~.
                         unlockIeTips = 0;
                     }
                 }
-                else {
+                else if (!chapter3Done) {
+                
 
-                    if (!chapter3Done) {
 
                         if (unlockIeTips == 0) {
                             console.info('*someone is knocking at the door*');
@@ -1369,7 +1416,7 @@ jrei   \____________/~~~.
                         }
                         if (unlockIeTips == 2) {
                             console.info('hmmm seems like this unit is old and a bit scrambled i cant access it');
-                            fetch(`${window.location.protocol}//${window.location.host}${window.location.pathname.replace(/html$/, 'txt')}`)
+                           fetch(`${window.location.protocol}//${window.location.host}${window.location.pathname.replace(/html$/, 'txt')}`)
                                 .then(function (response) {
                                     response.text()
                                 })
@@ -1391,18 +1438,23 @@ jrei   \____________/~~~.
                           
                         }
 
-
                         if (unlockIeTips == 5) {
-                            console.info('you can find the RESPONSE under the network tab');
+                            console.info('you can find the request under the network panel');
 
                             unlockIeTips = 6;
                         }
 
-                        if (unlockIeTips > 5 || unlockIeTips <-1) {
+                        if (unlockIeTips == 6) {
+                            console.info('click on the request and then click on the response tab to find the password');
+
+                            unlockIeTips = 7;
+                        }
+
+                        if (unlockIeTips > 6 || unlockIeTips <-1) {
 
                         }
 
-                    }
+                    
 
                 }
                 
@@ -1410,7 +1462,6 @@ jrei   \____________/~~~.
 
             if (!chapter3Done && netpass) {
                 chapter4();
-               // chapter3Done = true;
             }
         }
 
@@ -1454,12 +1505,12 @@ jrei   \____________/~~~.
 
 
             //
-
+            console.log('chapter4');
 
             document.getElementById('ie').classList.remove('hidden');
 
 
-            var dialogue = document.getElementsByClassName('di3');
+            var dialogue = document.getElementsByClassName('di4');
             dialogue[0].classList.remove('hidden');
             addEventListener('click', function (e) {
                 if (n < dialogue.length - 1) {
@@ -1473,10 +1524,10 @@ jrei   \____________/~~~.
                 else {
                     hasFinishedDialogue = true;
                     if (!hasFinishedDi) {
-                        alert("a quest");
+                       // alert("a quest");
 
                         console.info('need some more help?');
-                        watchDessert();
+                        
                         AddCookie(cookie1);
                     }
                 }
@@ -1498,8 +1549,8 @@ jrei   \____________/~~~.
                 mutationList.forEach(function (mutation) {
                   
                     if (mutation.removedNodes.length > 0) {
-                        if (mutation.removedNodes[0].id === 'no_mood') {
-                         //   console.info('fuck yea');
+                        if (mutation.removedNodes[0].id === 'lights') {
+                        
                             hfiwlrif();
 
                         } else {
@@ -1509,7 +1560,7 @@ jrei   \____________/~~~.
                    
                 });
             });
-            // observer.observe(document.getElementById('mood'),  {
+           
             observer.observe(document.body, {
 
                 attributes: true, childList: true, subtree: true 
@@ -1519,7 +1570,7 @@ jrei   \____________/~~~.
             console.log('theres no mood check the dom again for a bad node...')
         }
 
-        //delete cookie??
+        
         var cookieValue = 0;
         var watcher;
 
@@ -1573,7 +1624,7 @@ jrei   \____________/~~~.
         //turns on lights
         function hfiwlrif() {
             if (netpass) {
-                console.info('*lights*');
+                
                 var candles = document.getElementsByClassName('max');
                 //console.log(candles);
                 // candles.forEach(function (cand) {
@@ -1630,30 +1681,52 @@ jrei   \____________/~~~.
 
         var cookiesIsTrue;
 
-        function gmasdfadf() {
-            if (netpass) {
-                cookiesIsTrue = true;
-                postMood();
-                document.getElementById('strawberry').classList.remove('hidden');
-            }
-        }
 
         function sDs(z) {
             if (netpass) {
                 //spawn straberries
                 cookiesIsTrue = true;
-                console.log('this many ' + z);
+                console.info("*spawns " + z + "strawberros");
                 clearInterval();
                 document.getElementById('strawberry').classList.remove('hidden');
                 postMood();
+                
             //add check for candles and call post mood
             }
         }
-        function postMood() {
 
-            if (moodlight && cookiesIsTrue) {
-                console.info('niiiiiice');
+        var y = 0;
+        //do the candles 
+        function postMood() {
+            var dialogueOld = document.getElementById('di4');
+            for (var i = 0; i < dialogueOld.length; i++) {
+                dialogueOld[i].classList.add('hidden');
             }
+            var dialogue = document.getElementsByClassName('di5');
+            dialogue[0].classList.remove('hidden');
+            addEventListener('click', function (e) {
+                if (y < dialogue.length - 1) {
+
+                    (y + 1) % dialogue.length;
+                    y++;
+
+                    dialogue[y].classList.remove('hidden');
+                    dialogue[y - 1].classList.add('hidden');
+                }
+                else {
+                     
+                        //alert("turn off the lights");
+
+                    console.info('try removing the lights node in the dom ');
+                    console.info('right click on it and delete, make sure its the lights');
+                    
+
+
+                    watchDessert();
+                }
+            });
+
+           
         }
         //thing to watch for when you turn off lights
 
