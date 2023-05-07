@@ -1412,7 +1412,7 @@ jrei   \____________/~~~.
             dialogue[0].classList.remove('hidden');
 
             addEventListener('click', function (e) {
-                var stopIt = false;
+                
                 if (f < dialogue.length - 1) {
                     (f + 1) % dialogue.length;
                     f++;
@@ -1532,7 +1532,7 @@ jrei   \____________/~~~.
             var dialogueOld = document.getElementsByClassName('di3');
 
             for (var i = 0; i < dialogueOld.length - 1; i++) {
-                dialogueOld[0].classList.add('hidden');
+                dialogueOld[i].classList.add('hidden');
             }
             //
             console.log('chapter4');
@@ -1684,9 +1684,10 @@ jrei   \____________/~~~.
                 if (p < dialogue.length - 1) {
 
                     (p + 1) % dialogue.length;
-                    n++;
+                    p++;
 
                     dialogue[p].classList.remove('hidden');
+                  
                     dialogue[p - 1].classList.add('hidden');
                 }
                 else {
