@@ -1660,6 +1660,8 @@ jrei   \____________/~~~.
             }
         }
 
+
+        var p = 0;
         function sex() {
 
             console.info('sex anim');
@@ -1668,13 +1670,13 @@ jrei   \____________/~~~.
             dialogue[0].classList.remove('hidden');
 
             addEventListener('click', function (e) {
-                if (n < dialogue.length - 1) {
+                if (p < dialogue.length - 1) {
 
-                    (n + 1) % dialogue.length;
+                    (p + 1) % dialogue.length;
                     n++;
 
-                    dialogue[n].classList.remove('hidden');
-                    dialogue[n - 1].classList.add('hidden');
+                    dialogue[p].classList.remove('hidden');
+                    dialogue[p - 1].classList.add('hidden');
                 }
                 else {
                     chapter5();
