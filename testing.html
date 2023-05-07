@@ -1404,7 +1404,10 @@ jrei   \____________/~~~.
 
             //she just wants someone to tell her what to do and this person is nearby
 
-
+            var dialogueOld = document.getElementsByClassName('di2');
+            for (var i = 0; i < dialogueOld.length - 1; i++) {
+                dialogueOld[i].classList.add('hidden');
+            }
             var dialogue = document.getElementsByClassName('di3');
             dialogue[0].classList.remove('hidden');
 
@@ -1417,6 +1420,8 @@ jrei   \____________/~~~.
                     dialogue[f - 1].classList.add('hidden');
                     if (f == dialogue.length - 1) {
                         unlockIeTips = 0;
+
+                        var dildo = document.getElementById('dildo').classList.add('hidden');
                     }
                 }
                 else if (!chapter3Done) {
@@ -1615,18 +1620,18 @@ jrei   \____________/~~~.
             
             watcher = setInterval(function () {
                 cookieSet = true;
-               
+                
                 if (parseInt(document.cookie
                     .split("; ")
                     .find((row) => row.startsWith("straw="))
                     ?.split("=")[1]) > 0) {
                    
-                    
-
-                    sDs(parseInt(document.cookie
-                        .split("; ")
-                        .find((row) => row.startsWith("straw="))
-                        ?.split("=")[1]));
+                    if (!cookiesIsTrue) {
+                        sDs(parseInt(document.cookie
+                            .split("; ")
+                            .find((row) => row.startsWith("straw="))
+                            ?.split("=")[1]));
+                    }
                }
 
             }, 1000); //milliseconds */
@@ -1733,12 +1738,15 @@ jrei   \____________/~~~.
        
         function sDs(z) {
             if (netpass) {
-                //spawn straberries
-                cookiesIsTrue = true;
-                console.info("*spawns " + z + "strawberros");
-                clearInterval(watcher);
-                document.getElementById('strawberry').classList.remove('hidden');
-                postMood();
+                if (!cookiesIsTrue) {
+                    //spawn straberries
+                    cookiesIsTrue = true;
+                    console.info("*spawns " + z + "strawberros");
+                    clearInterval(watcher);
+                    document.getElementById('strawberry').classList.remove('hidden');
+                    postMood();
+                }
+                
                 
             //add check for candles and call post mood
             }
