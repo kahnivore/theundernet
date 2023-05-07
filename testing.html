@@ -1664,10 +1664,9 @@ jrei   \____________/~~~.
 
             console.info('sex anim');
 
-
             var dialogue = document.getElementsByClassName('di6');
             dialogue[0].classList.remove('hidden');
-            
+
             addEventListener('click', function (e) {
                 if (n < dialogue.length - 1) {
 
@@ -1680,7 +1679,9 @@ jrei   \____________/~~~.
                 else {
                     chapter5();
                 }
+            });
 
+        }
         function changeColor() {
 
             //ar ascii = document.querySelector("ascii-art");
