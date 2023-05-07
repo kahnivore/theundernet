@@ -243,6 +243,14 @@ hi everybody
             white-space: pre;
         }
 
+        .di6 {
+            position: absolute;
+            bottom: 320px;
+            right: 275px;
+            font-family: monospace;
+            white-space: pre;
+        }
+
         .c1 {
             position: absolute;
             bottom: 320px;
@@ -617,6 +625,15 @@ how about u get rid of the lights
 and maybe urself while ur at it 
 </div> 
 
+ <div class="text hidden di6 c1 bubble bubble-bottom-left">
+no one touches me like u do 
+</div> 
+ <div class="text hidden di6 e1 bubble bubble-bottom-left">
+no one gets me like u do, i think our plan to overthrow microsoft is finally - 
+</div> 
+ <div class="text hidden di6 c1 bubble bubble-bottom-left">
+omg u never were good at privacy 
+</div> 
    
 
     
@@ -709,7 +726,7 @@ jrei   \____________/~~~.
 
 
 
-        <div id="strawberry" class="ascii-art hidden left">
+        <div id="strawberry" class="ascii-art hidden left" style="position: absolute; top: 100%">
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⠶⣦⣤⣀⡀⠀⢀⣴⠞⠻⣧⠀⠀⠀⠀⢀⣤⣶⣿⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⡆⠀⠀⠈⠙⠳⣾⡇⠀⠀⢹⡇⠀⣠⡴⠟⢉⣹⣿⡀⠀⠀
@@ -1503,7 +1520,11 @@ jrei   \____________/~~~.
 
 
 
+            var dialogueOld = document.getElementsByClassName('di3');
 
+            for (var i = 0; i < dialogueOld.length - 1; i++) {
+                dialogueOld[0].classList.add('hidden');
+            }
             //
             console.log('chapter4');
 
@@ -1579,6 +1600,8 @@ jrei   \____________/~~~.
         var addCookie = false;
         function AddCookie(cookie) {
 
+            console.info('the cookies are in the storage tab');
+            console.info('try changing the value to something non-zero');
             if (!addCookie) {
                 document.cookie = `${cookie.key}=${cookie.value}; SameSite=Lax`;
                 console.log('watching');
@@ -1598,7 +1621,7 @@ jrei   \____________/~~~.
                     .find((row) => row.startsWith("straw="))
                     ?.split("=")[1]) > 0) {
                    
-                    console.log('strawberros');
+                    
 
                     sDs(parseInt(document.cookie
                         .split("; ")
@@ -1631,11 +1654,32 @@ jrei   \____________/~~~.
                 candles[0].classList.remove('hidden');
                 candles[1].classList.remove('hidden');
                 moodlight = true;
-                postMood();
-
+                
+                sex();
                 changeColor();
             }
         }
+
+        function sex() {
+
+            console.info('sex anim');
+
+
+            var dialogue = document.getElementsByClassName('di6');
+            dialogue[0].classList.remove('hidden');
+            
+            addEventListener('click', function (e) {
+                if (n < dialogue.length - 1) {
+
+                    (n + 1) % dialogue.length;
+                    n++;
+
+                    dialogue[n].classList.remove('hidden');
+                    dialogue[n - 1].classList.add('hidden');
+                }
+                else {
+                    chapter5();
+                }
 
         function changeColor() {
 
@@ -1681,13 +1725,13 @@ jrei   \____________/~~~.
 
         var cookiesIsTrue;
 
-
+       
         function sDs(z) {
             if (netpass) {
                 //spawn straberries
                 cookiesIsTrue = true;
                 console.info("*spawns " + z + "strawberros");
-                clearInterval();
+                clearInterval(watcher);
                 document.getElementById('strawberry').classList.remove('hidden');
                 postMood();
                 
@@ -1698,7 +1742,7 @@ jrei   \____________/~~~.
         var y = 0;
         //do the candles 
         function postMood() {
-            var dialogueOld = document.getElementById('di4');
+            var dialogueOld = document.getElementsByClassName('di4');
             for (var i = 0; i < dialogueOld.length; i++) {
                 dialogueOld[i].classList.add('hidden');
             }
