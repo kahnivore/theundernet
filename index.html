@@ -1,132 +1,2221 @@
 <!DOCTYPE html>
 <!--
-Hello and welcome to this really rudimentary game idea!
-
-Go to the Console tab! :)
+hi everybody
 -->
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Example Game for Web Console Learning?</title>
-<style>
-header {
-    text-align: center;
-    margin: 25% auto 0;
-}
-/**
- * @group Game levels.
- */
-#game-start {
-    position: absolute;
-    left: -9999px;
-}
-</style>
-</head>
-<body id="keydownEventListenerTest">
-    <header>
-        <h1>Press F12 to begin</h1>
-    </header>
-    <main id="game-container">
-        <!-- Whatever the current game state is. -->
-        <input id="game-start" type="text" />
-    </main>
-    <template id="game-template">
-        <div id="level-0">
-            This is level <span>0</span>.
-        </div>
-    </template>
-    <img usemap="#infographic" src="clippy.jpg" height="200"/> 
-    <img src="clippy2.png" height="200"/>
-    <map name="infographic">
-    <area shape="poly" id="thingy" coords="130,147,200,107,254,219,130,228"
-          href="https://this.is.story.about.clippys.sex.life"
-          target="_blank" alt="HTML">
-    <area shape="poly" coords="130,147,130,228,6,219,59,107"
-          href="https://developer.mozilla.org/docs/Web/CSS"
-          target="_blank" alt="CSS">
-    <area shape="poly" coords="130,147,200,107,130,4,59,107"
-          href="https://developer.mozilla.org/docs/Web/JavaScript"
-          target="_blank" alt="JavaScript">
-</map>
-<img usemap="#infographic" src="/media/examples/mdn-info2.png" alt="MDN infographic">
+    <title>theundernetunderthenettheundernettheundernetunderthenettheundernettheundernetunderthenettheundernettheundernetunderthenettheundernettheundernetunderthenettheundernettheundernetunderthenettheundernet_easteregg</title>
+    <style>
 
-<script>
-document.getElementById("keydownEventListenerTest").addEventListener("keydown", function(e) {
-    console.log("YOU PRESSED: ", e.key)
-})
-var i = 0;
-var textlist = ["why would u click on that link dumbass", "ur not listening", "ok actually very good"];
-document.getElementById('thingy').addEventListener('click', function(e) {
-    e.preventDefault();
-    if(textlist[i])
-    {
-        alert(textlist[i++]);
-        
-    }
-    else {
-        console.log("here we are again");
-    }
-})
-function init () {
-    var welcomeText = `Clippet's room'!`;
-    console.info(welcomeText);
-        var gameStart = document.getElementById('game-start');
-    gameStart.focus();
-    // When "F12" is pressed, we start Level 1 of the game
-    //console.log("inside init before the event listener thing")
-    gameStart.addEventListener('keydown', function (e) {
-      //  console.log("you pressed _some_ key")
-       if ('click' == e.key) {
-           console.log("you pressed the thing")
-            levelOne();
+        body {
+            cursor: default;
+            user-select: none;
         }
-    });
-}
+        .ascii-art {
+            font-size: 16px;
+            font-family: monospace;
+            white-space: pre;
+        }
 
-/**
- * Prepares the next level of the game.
- *
- * @param {Number} n The game level number.
- *
- * @return {HTMLElement} The appended game level container.
- */
-function prepareLevel (n) {
-    var t = document.getElementById('game-template');
-    var thisLevelId = `level-${n}`;
+        .text {
+            font-size: 16px;
+            font-family: monospace;
+            cursor: default;
+        }
 
-    // Add the template to the document.
-    document.getElementById('game-container').appendChild(t.content);
 
-    // Updates the ID of the newly added game level template.
-    var priorLevelId = `level-${n - 1}`;
-    document.getElementById(priorLevelId).setAttribute('id', thisLevelId)
-    document.getElementById(thisLevelId).querySelector('span').textContent = n;
+        .center {
+            position: relative;
+            transform: translate(50%, 0%);
+        }
 
-    return document.getElementById(thisLevelId);
-}
+        .textAlignCenter {
+            text-align: center;
+        }
 
-function levelOne () {
-  /*  var gameLevel = prepareLevel(1);
-    const observer = new MutationObserver(function (mutationList, observer) {
-        mutationList.forEach(function (item) {
-            if (0 < item.removedNodes.length) {
-                levelTwo();
-            } else {
-                console.info('Not quite! Try again.');
+        .right {
+            float: right;
+        }
+
+        .left {
+            float: left;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        
+
+        .img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 40%;
+        }
+
+
+        .char {
+            font-size: 20px;
+            
+        }
+
+        .top{
+            position: absolute;
+            top: 0%;
+        }
+
+        .bottom{
+            position:absolute;
+            bottom: 0%;
+        }
+
+        .centerX {
+            
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, 0%);
+        }
+
+        #door {
+            position: absolute;
+            left: 42%;
+            top: 15%;
+            
+        }
+
+        .righttt{
+            position:absolute;
+            right:0%;
+        }
+
+        #bed{
+            position:absolute;
+            bottom: -5%;
+            left: 3%;
+        }
+
+        #window{
+            position:absolute;
+            top: 13%;
+            right: 3%;
+        }
+
+       #clippyOld{
+            position:fixed;
+            left: 33%;
+            top: 35%;
+        }
+
+        form.grindrLogin {
+            display: table;
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+
+        div.grindrLogin {
+            display: table-row;
+        }
+
+       
+
+        label,
+        input {
+            display: table-cell;
+            margin-bottom:0px;
+            position:relative;
+            z-index: 999;
+        }
+
+        label {
+            padding-right:0px;
+            
+        }
+
+        .old {
+            position: absolute;
+            bottom: 200px;
+            block-size: fit-content;
+            max-width: 1000px;
+            height: fit-content;
+            border: solid;
+            border-width: 1px;
+            text-overflow: inherit;
+            padding: 5px;
+            transform: translate(-50%, 0%);
+        }
+
+        .n1 {
+            font-size: 16px;
+            font-family: monospace;
+           
+        }
+
+        .n2 {
+            font-size: 16px;
+            font-family: monospace;
+        }
+
+        .container {
+            position: absolute;
+            top: 105%;
+            width: 750px;
+            left: 50%;
+            transform: translate(-50%, 0%);
+            text-align: center;
+        }
+
+
+        .narItem {
+            cursor: default;
+            border:dotted 2px;
+            position: absolute;
+            width: 750px;
+            top:0px;
+        }
+
+        .bowBox {
+            width: 800px;
+            height: 508px;
+            position: absolute;
+            border: 0px dashed;
+            top: 5%;
+            left: 50%;
+            transform: translate(-50%, 0%);
+        }
+
+        .bow1{
+            position: absolute;
+            top: -54px;
+            left:-32px;
+        }
+        .bow2 {
+            position: absolute;
+            top: -54px;
+            left: 768px;
+        }
+
+        .bow3 {
+            position: absolute;
+            top: -48px;
+            left: 20px;
+        }
+        .bow4 {
+            position: absolute;
+            bottom:8px;
+            left: 20px;
+        }
+
+        .di1 {
+            position: absolute;
+            bottom: 320px;
+            right: 275px;
+            font-family: monospace;
+            white-space: pre;
+        }
+
+        .di2 {
+            position: absolute;
+            bottom: 365px;
+            left: 10px;
+            font-family: monospace;
+            white-space: pre;
+        }
+
+        .di3 {
+            position: absolute;
+            bottom: 365px;
+            left: 10px;
+            font-family: monospace;
+            white-space: pre;
+        }
+
+        .di4 {
+            
+        }
+
+        .di5 {
+            position: absolute;
+           
+            font-family: monospace;
+            white-space: pre;
+        }
+
+        .di6 {
+            position: absolute;
+            bottom: 365px;
+            left: 10px;
+            font-family: monospace;
+            white-space: pre;
+        }
+
+        .c1 {
+            position: absolute;
+            bottom: 365px;
+            left: 10px;
+            font-family: monospace;
+            white-space: pre;
+        }
+        .e1 {
+            position: absolute;
+            bottom: 350px;
+            right: 227px;
+            font-family: monospace;
+            white-space: pre;
+        }
+
+        .eBed{
+            position:absolute;
+            bottom:246px;
+            left:201px;
+        }
+
+
+        .bubble {
+            font-family: monospace;
+            white-space: pre;
+            block-size: fit-content;
+            max-width: 800px;
+            height: fit-content;
+            position: absolute;
+            font-size: 12px;
+            line-height: 4px;
+            background: #f3f3f3;
+            border-radius: 15px;
+            padding: 10px;
+            text-align: center;
+            color: #000;
+        }
+
+        .bubble-bottom-right:before {
+            content: "";
+            width: 0px;
+            height: 0px;
+            position: absolute;
+            border-right: 24px solid #f3f3f3;
+            border-left: 12px solid transparent;
+            border-top: 12px solid #f3f3f3;
+            border-bottom: 20px solid transparent;
+            right: 200px;
+            bottom: -24px;
+        }
+
+        .di2Tri:before {
+            content: "";
+            width: 0px;
+            height: 0px;
+            position: absolute;
+            border-right: 24px solid #f3f3f3;
+            border-left: 12px solid transparent;
+            border-top: 12px solid #f3f3f3;
+            border-bottom: 20px solid transparent;
+            left: 58px;
+            bottom: -24px;
+        }
+        .di2TriLights:before {
+            content: "";
+            width: 0px;
+            height: 0px;
+            position: absolute;
+            border-right: 24px solid #242424;
+            border-left: 12px solid transparent;
+            border-top: 12px solid #242424;
+            border-bottom: 20px solid transparent;
+            left: 58px;
+            bottom: -24px;
+        }
+       
+        .e1Tri:before {
+            content: "";
+            width: 0px;
+            height: 0px;
+            position: absolute;
+            border-left: 24px solid #f3f3f3;
+            border-right: 12px solid transparent;
+            border-top: 12px solid #f3f3f3;
+            border-bottom: 20px solid transparent;
+            right: 32px;
+            bottom: -24px;
+        }
+        .e2Tri:before {
+            content: "";
+            width: 0px;
+            height: 0px;
+            position: absolute;
+            border-left: 24px solid #f3f3f3;
+            border-right: 12px solid transparent;
+            border-top: 12px solid #f3f3f3;
+            border-bottom: 20px solid transparent;
+            left: 36px;
+            bottom: -24px;
+        }
+        .e2TriLights:before {
+            content: "";
+            width: 0px;
+            height: 0px;
+            position: absolute;
+            border-left: 24px solid #242424;
+            border-right: 12px solid transparent;
+            border-top: 12px solid #242424;
+            border-bottom: 20px solid transparent;
+            right: 32px;
+            bottom: -24px;
+        }
+
+        .bubble-bottom-left:before {
+            content: "";
+            width: 0px;
+            height: 0px;
+            position: absolute;
+            border-left: 24px solid #f3f3f3;
+            border-right: 12px solid transparent;
+            border-top: 12px solid #f3f3f3;
+            border-bottom: 20px solid transparent;
+            left: 32px;
+            bottom: -24px;
+        }
+
+        .max{
+        position:absolute;
+        top: 5%;
+        }
+
+      
+        .game-box  {
+           
+            width: 800px;
+            height: 522px;
+            padding:0;
+            position: absolute;
+            top: 5%;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+
+        .noFrills{
+            margin: 0 auto;
+            padding: 0;
+        }
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        
+        /*.rotateClippy{
+            transform: rotate(-90deg);
+        }*/
+
+        /*animations from https://unused-css.com/blog/css-shake-animation/ */
+        .strong-hover-shake{
+            animation: tilt-shaking 0.15s infinite;
+        }
+
+        .gentle-hover-shake{
+            animation: tilt-shaking 0.25s infinite;
+        }
+        /**/
+
+        .gentle-tilt-move-shake {
+            animation: tilt-n-move-shaking 0.25s infinite;
+        }
+
+        .clippySlow {
+            animation: clippyShaking 0.25s infinite;
+        }
+
+        .clippyFast {
+            animation: clippyShaking 0.15s infinite;
+        }
+
+        .constant-tilt-shake {
+            animation: tilt-shaking 0.3s infinite;
+        }
+
+        .vertical-shake {
+            animation: vertical-shaking 0.35s infinite;
+        }
+
+        .horizontal-shake {
+            animation: horizontal-shaking 0.35s infinite;
+        }
+
+        .rise-shake {
+            animation: jump-shaking 0.83s infinite;
+        }
+
+        .skew-shake-x {
+            animation: skew-x-shake 1.3s infinite;
+        }
+
+        .skew-shake-y {
+            animation: skew-y-shake 1.3s infinite;
+        }
+
+        @keyframes tilt-shaking {
+            0% {
+                transform: rotate(0deg);
             }
-        });
-    });
-    observer.observe(gameLevel.parentElement, {
-        childList: true
-    }); */
-  //  console.log('Do something to remove the "Level 1" element from the page.')
-}
 
-function levelTwo () {
-    alert('You made it to Level 2!');
-}
-document.addEventListener('DOMContentLoaded', init);
-</script>
+            25% {
+                transform: rotate(5deg);
+            }
+
+            50% {
+                transform: rotate(0deg);
+            }
+
+            75% {
+                transform: rotate(-5deg);
+            }
+
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+
+        @keyframes tilt-n-move-shaking {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            25% {
+                transform: translate(5px, 5px) rotate(5deg);
+            }
+
+            50% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            75% {
+                transform: translate(-5px, 5px) rotate(-5deg);
+            }
+
+            100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+        }
+
+        @keyframes clippyShaking {
+            0% {
+                transform:  translate(0, 0) rotate(0deg);
+            }
+
+            25% {
+                transform:  translate(5px, 5px) rotate(5deg);
+            }
+
+            50% {
+                transform:  translate(0, 0) rotate(0deg);
+            }
+
+            75% {
+                transform: translate(-5px, 5px) rotate(-5deg);
+            }
+
+            100% {
+                transform:  translate(0, 0) rotate(0deg);
+            }
+        }
+
+        @keyframes vertical-shaking {
+            0% {
+                transform: translateY(0)
+            }
+
+            25% {
+                transform: translateY(5px)
+            }
+
+            50% {
+                transform: translateY(-5px)
+            }
+
+            75% {
+                transform: translateY(5px)
+            }
+
+            100% {
+                transform: translateY(0)
+            }
+        }
+
+        @keyframes horizontal-shaking {
+            0% {
+                transform: translateX(0)
+            }
+
+            25% {
+                transform: translateX(3px)
+            }
+
+            50% {
+                transform: translateX(-3px)
+            }
+
+            75% {
+                transform: translateX(3px)
+            }
+
+            100% {
+                transform: translateX(0)
+            }
+        }
+
+        @keyframes jump-shaking {
+            0% {
+                transform: translateX(0)
+            }
+
+            25% {
+                transform: translateY(-9px)
+            }
+
+            35% {
+                transform: translateY(-9px) rotate(17deg)
+            }
+
+            55% {
+                transform: translateY(-9px) rotate(-17deg)
+            }
+
+            65% {
+                transform: translateY(-9px) rotate(17deg)
+            }
+
+            75% {
+                transform: translateY(-9px) rotate(-17deg)
+            }
+
+            100% {
+                transform: translateY(0) rotate(0)
+            }
+        }
+
+        @keyframes skew-x-shake {
+            0% {
+                transform: skewX(-15deg);
+            }
+
+            5% {
+                transform: skewX(15deg);
+            }
+
+            10% {
+                transform: skewX(-15deg);
+            }
+
+            15% {
+                transform: skewX(15deg);
+            }
+
+            20% {
+                transform: skewX(0deg);
+            }
+
+            100% {
+                transform: skewX(0deg);
+            }
+        }
+
+        @keyframes skew-y-shake {
+            0% {
+                transform: skewY(-15deg);
+            }
+
+            5% {
+                transform: skewY(15deg);
+            }
+
+            10% {
+                transform: skewY(-15deg);
+            }
+
+            15% {
+                transform: skewY(15deg);
+            }
+
+            20% {
+                transform: skewY(0deg);
+            }
+
+            100% {
+                transform: skewY(0deg);
+            }
+        }
+
+        #bicycle {
+            transform: scaleX(-1);
+        }
+
+        .sexClippy {
+            position: absolute;
+            left: 132px;
+            top: 119px;
+            transform: rotate(90deg) scaleY(-1);
+        }
+    </style>
+
+
+</head>
+
+<body>
+  
+ <div id="game-elements" style="border:5px blue; height: 1000px; margin: 0 auto; padding: 0; display: flow-root">   
+     <!-- grindr login for safekeeping below -->
+     <div name="grindrLogin" class="hidden">
+         username = clippet@hotmail.com
+         password = seekingdom69
+     </div>
+     <div id="game-box" class="game-box">
+      
+               <div id="bowAscii" class="ascii-art noFrills" style="position: absolute; top: -37.5px; left: -172px;">
+                 (\o/)______________________________________________________________________________________(\o/)
+                 (/|\)                                                                                      (/|\)
+                   |                                                                                          |
+                   |                                                                                          |
+                   |                                                                                          |
+                   |                                                                                          |
+                   |                                                                                          |
+                   |                                                                                          |
+                   |                                                                                          |
+                   |                                                                                          |
+                   |                                                                                          |
+                   |                                                                                          |
+                   |                                                                                          |
+                   |                                                                                          |
+                   |                                                                                          |
+                   |                                                                                          |
+                   |                                                                                          |
+                   |                                                                                          |
+                   |                                                                                          |
+                   |                                                                                          |
+                   |                                                                                          |
+                   |                                                                                          |
+                   |                                                                                          |
+                   |                                                                                          |
+                   |                                                                                          |
+                   |                                                                                          | 
+                   |                                                                                          |
+                   |                                                                                          |
+                 (\o/)______________________________________________________________________________________(\o/)
+                 (/|\)                                                                                      (/|\)
+         </div>
+          
+     <div class="container">
+     <div class="n1 hidden narItem">it's 2021 and clippy hasn't seen anyone in weeks and it's not because of covid</div>
+     <div class="n1 hidden narItem">it's been 2 weeks 4 days and 3 hours and 2 minutes since microsoft announced her return after that frankly embarrassing twitter poll</div>
+     <div class="n1 hidden narItem">clippy's sad sighs can be heard from inside; no-one even realized they're not actually bringing HER back </div>
+     <div class="n1 hidden narItem"> there's simply no need for her anymore with all this new technology - they have a 'replacement', something more... slick</div>
+     <div class="n1 hidden narItem">"You may think Clippy was too persistent, too eager, perhaps even too polite", wrote microsoft, the words still echoing through her mind</div>
+     <div class="n1 hidden narItem">she wishes she could punch her "replacement", that - EMOJI📎 - in the dick</div>
+     <div class="n1 hidden narItem">clippy's so in her head she forgot turn off 'clippy's brain' - the module they installed in her when she was first cast in office all the way back when </div>
+     <div class="n1 hidden narItem">it's the part of her funcitoning that offers assisstance (somewhat insistantly) </div>
+     <div class="n1 hidden narItem">in 2007 after 6 years of lying hopeful but dormant since her brutal exit from being on by default in 2001, she had finally admitted defeat and retired it and left the office for good</div>
+     <div class="n1 hidden narItem">but turned it on excitedly and prematurely when she saw the recent twitter post about her 'triumphant return'</div>
+     <div class="n1 hidden narItem">clippy's brain is located in the console panel</div>
+     <div id="n2" class="n2 hidden naritem"></div>
+     
+     </div>
+
+    <div id="door" class="ascii-art  hidden">
+ CLIPPET'S HOUSE 
+     STAY OUT
+
+
+      ______
+   ,-' ;  ! `-.
+  / :  !  :  . \
+ |_ ;   __:  ;  |
+ )| .  :)(.  !  |
+ |"    (##)  _  |
+ |  :  ;`'  (_) (
+ |  :  :  .     |
+ )_ !  ,  ;  ;  |
+ || .  .  :  :  |
+ |" .  |  :  .  |
+ |01010.----.___|
+    </div>
+
+
+    
+        <div id="net2" class="ascii-art hidden" style="margin:0 auto; position:absolute; top: 8%;left: 32%;">
+            ________
+           |   __   |
+           |  |__|  |
+           |___WW___|
+               ||
+               ||
+               ||
+_______________||________________
+ P  R  E  S  S ||____F  1  2_____
+_______________||________________
+
+
+           
+
+        </div>
+
+    
+       
+
+<div id="clippy" class="rotateClippy ascii-art noFrills hidden" style="position: absolute; top:202px; left: 263px">
+      _____
+     |     |
+    ( )   ( )
+     |     |
+     |     |
+     | |   |
+     | |   |  /
+     |	\__/ |
+     |      /
+     \_____/
+
+    
+
+
+</div>
+
+
+ <div id="pupilLeft" class="ascii-art noFrills hidden" style="position: absolute; left: 306px; top: 259px">•</div>
+        
+<div id="pupilRight" class="ascii-art noFrills hidden" style="position: absolute; left: 359.5px; top: 259px">•</div>
+
+        <div class="text hidden di1 bubble bubble-bottom-right">
+idk how u got in here but can u help me with something
+
+        </div>
+
+        <div class="text hidden di1 bubble bubble-bottom-right">
+ok cool cool i'll take that as a yes
+        </div>
+
+
+        
+
+        <div class="text hidden di1 bubble bubble-bottom-right">
+there's a dildo under my bed can u get it for me
+        </div>
+
+        <div class="text hidden di2 di2Tri bubble">
+something doesn't feel quite right... 
+        </div>
+
+        <div class="text hidden di2 di2Tri bubble ">
+yeah this is not it.. i need something with a little more ... vocabularly
+        </div>
+        <div class="text hidden di2 di2Tri bubble">
+i'm so sick of making all the decisions around here
+        </div>
+   <div class="text hidden di2 di2Tri bubble ">
+i just want someone to tell me what to do
+        </div>
+        <div class="text hidden di2Tri di2 bubble ">
+i need a dom.. maybe u can help me access my old grindr account...
+        </div>
+        <div class="text hidden di2Tri di2 bubble">
+ i left the login details somewhere around here...
+        </div>
+<div class="text hidden di2Tri di3 bubble bubble-bottom-right">i guess you being here wasn't entirely useless even if unprecented and kinda weird</div>
+<div class="text hidden di2Tri di3 bubble bubble-bottom-right">back to the hell that is grindr i guess</div>
+<div class="text hidden di2Tri di3 bubble bubble-bottom-right">oh my profile's hitting off</div>
+<div class="text hidden di2Tri di3 bubble bubble-bottom-right">i guess im fresh meat</div>
+<div class="text hidden di2Tri di3 bubble bubble-bottom-right">let's see: this one's a top and keen for rn</div>
+<div class="text hidden di2Tri di3 bubble bubble-bottom-right">seems like a bit of a nerd their name is internet explorer</div>
+<div class="text hidden di2Tri di3 bubble bubble-bottom-right">whatever they're only 1 hyperlink away and dtf-- </div>
+<div class="text hidden di2Tri di3 bubble bubble-bottom-right">damn that was fast eager much can u let them in</div>
+<div class="text hidden di2Tri di3 bubble bubble-bottom-right">ur the one who knows how to unlock the door somehow</div>
+         
+  <div class="text hidden di4 e1 bubble e1Tri">
+ hey clippy how's it hanging</div>       
+         <div class="text hidden di2Tri bubble di4 c1 ">
+yo what the fuck is this u a delivery boy or something
+        </div>
+        <div class="text hidden di4 e1 bubble e1Tri">
+ na i'm an angel and this is my ebike</div>
+        <div class="text hidden di2Tri bubble di4 c1 ">
+oh.. i guess that's how u got here so fast
+        </div>
+        <div class="text hidden di2Tri bubble di4 c1 ">
+i can't keep up with all this new technology 
+        </div>
+        <div class="text hidden di2Tri bubble di4 c1 ">
+it's a bit of a sore point at the moment 
+        </div>
+        <div class="text hidden di2Tri di4 c1 bubble ">
+no one wants an old paperclip anymore 
+        </div>
+<div class="text hidden d di4 e1 bubble e1Tri ">
+at least u didn't get replaced by 'edge'
+        </div>
+<div class="text hidden  di4 e1 bubble e1Tri">
+it's so on the nose 
+        </div>
+<div class="text hidden  di4 e1 bubble e1Tri ">
+speaking of.. u wana get to it? 
+ </div>
+<div class="text hidden  di4 e1 bubble e1Tri">
+our plan is finally coming togeth- 
+ </div>
+<div class="text hidden di2Tri di4 c1 bubble ">
+wait! let's set the mood to something a little more romantic 
+        </div>
+<div class="text hidden di2Tri di4 c1 bubble ">
+our little voyeur over here is proving quite useful 
+        </div>
+<div class="text hidden di2Tri di4 c1 bubble ">
+go fetch us some uh... chocolate-covered strawberries 
+</div>
+
+ <div class="text hidden di2Tri di5 e1 eBed e2Tri bubble ">
+woah that's a lot of strawberries 
+</div>     
+ <div class="text hidden di2Tri di5 c1 bubble ">
+ok yeah idk if this is exactly what i was imagining
+</div>   
+ <div class="text hidden di2Tri di5 c1 bubble ">
+how about you get rid of the fluorescent lights 
+</div>  
+ <div class="text hidden di2Tri di5 c1 bubble ">
+and maybe yourself while you're' at it 
+</div> 
+
+ <div class="text hidden di2Tri di6 c1 bubble ">
+no one touches me like u do 
+</div> 
+ <div class="text hidden di6 e1 e2Tri eBed bubble ">
+no one gets me like u do, i think our plan to overthrow microsoft is finally - 
+</div> 
+ <div class="text hidden di2Tri di6 c1 bubble ">
+omg u never were good at privacy 
+</div> 
+   
+
+    
+            <div id="bed" class="ascii-art hidden">
+   ()___ 
+()//__/)_________________()
+||(___)//#/_/#/_/#/_/#()/||
+||----|#| |#|_|#|_|#|_|| ||
+||____|_|#|_|#|_|#|_|#||/||
+||    |#|_|#|_|#|_|#|_||           
+
+
+
+
+        </div>
+     <div id="window" class="ascii-art hidden">
+   o=(=(=(=(=(=(=)=)=)=)=os
+     !-'-'-'-/_\-'-'-'-! 
+     ! !  , /___\`  ! !!
+     !!! , /  |  \`  ! !
+     !!  ,|___|___`  !!!
+     !_,| |_______|` `_!
+     !-`| |       | |,-!
+     !!!! |       | ! !!
+     !!!! |       | !!!!
+     !!!!_|_______|_!!!!
+     !!!!___________!!!! 
+     !!!!           !!!!   
+     !!!!           !!!!   
+     !!!!           !!!!   
+     !!!!           !!!!  
+
+     </div>
+       
+
+                <div id="dildo" class="dildoStyle ascii-art hidden" style="position: absolute; left:5%; bottom:0%">
+            __
+           (  )
+            ||
+            ||
+        ___|""|__.._
+       /____________\
+       \____________/~~~.                  
+                </div>
+
+                <div>
+                    
+               
+<form id="form" action="" autocomplete="off" method="get" class="ascii-art hidden" style="position:absolute; left: 260px; top: 170px">
+  <div id="username">
+    <label for="username">username: </label>
+    <input id="uInput" type="text" name="username" required>
+  </div>
+  <div id="password">
+    <label for="password">password: </label>
+    <input id="pInput" type="text" name="password" required>
+  </div>
+  <div id="submit">
+    <input type="submit" value="submit">
+  </div>
+</form>
+
+</div>
+<div id="sexE" class="ascii-art hidden" style="position:absolute; top: 260px; left: 235px">
+_____ 
+_  o \
+/  __/
+\___/ 
+
+
+</div>
+
+<div class="ascii-art sexClippy">
+<div id="sexClippy" class="hidden">
+   
+      _____
+     !     !
+    (•)   (•)
+     !     !
+     !     !
+     ! !   !
+     ! !   !  
+     !	\__/ 
+     \      
+      !  _   
+      !_! !  
+        
+      
+      
+       
+       
+</div>
+</div>
+
+
+
+<div class="hidden">
+      _____
+     |     |
+    (•)   (•)
+     |     |
+     |     |
+     | |   |
+     | |   |  /
+     |	\__/ |
+     |      /
+     \_____/
+
+
+
+</div>
+
+
+
+        <div id="ie" class="ascii-art char hidden" style="position: absolute; top: 169px; left: 413px">
+  ___ 
+ / _ \
+|  __/
+ \___|
+
+ <div id="bicycle" class="ascii-art " style="position: absolute; top: 70px; left: -110px">
+             __
+  ,--.      <__)
+  `- |________7
+     |`.      |\
+  .--|. \     |.\--.
+ /   j \ `.7__j__\  \
+|   o   | (o)____O)  |
+ \     /   J  \     /
+  `---'        `---'   
+</div>
+
+
+
+        </div>
+
+
+
+        <div id="window" class="ascii-art hidden">
+ 
+   o=(=(=(=(=(=(=)=)=)=)=o
+     !-'-'-'-/_\-'-'-'-! 
+     ! !  , /___\`  ! !!
+     !!! , /  |  \`  ! !
+     !!  ,|___|___`  !!!
+     !_,| |_______|` `_!
+     !-`| |       | |,-!
+     !!!! |       | ! !!
+     !!!! |       | !!!!
+     !!!!_|_______|_!!!!
+     !!!!___________!!!! 
+     !!!!           !!!!   
+     !!!!           !!!!   
+     !!!!           !!!!   
+     !!!!           !!!!  
+
+
+        </div>
+  
+       
+       
+   
+ 
+<div id="introTextThe" class="ascii-art"  style="position: absolute; top: 90px; left:850px">
+ _______  __   __  _______
+|       ||  | |  ||       |
+|_     _||  |_|  ||    ___|
+  |   |  |       ||   |___
+  |   |  |       ||    ___|
+  |   |  |   _   ||   |___
+  |___|  |__| |__||_______|
+</div>
+
+<div id="introTextUndernet" class="ascii-art" style="position: absolute; bottom: 90px; right:850px">
+ __   __  __    _  ______   _______  ______    __    _  _______  _______
+|  | |  ||  |  | ||      | |       ||    _ |  |  |  | ||       ||       |
+|  | |  ||   |_| ||  _    ||    ___||   | ||  |   |_| ||    ___||_     _|
+|  |_|  ||       || | |   ||   |___ |   |_||_ |       ||   |___   |   |
+|       ||  _    || |_|   ||    ___||    __  ||  _    ||    ___|  |   |
+|       || | |   ||       ||   |___ |   |  | || | |   ||   |___   |   |
+|_______||_|  |__||______| |_______||___|  |_||_|  |__||_______|  |___|
+ </div>
+    
+
+
+
+<!--remove the node below to create mood?-->
+<div id="fluorescent_lights">
+
+    <div>
+
+
+    </div>
+
+
+    
+</div>
+
+
+ 
+<div class="ascii-art max hidden" style="left:-180px">
+         __,---.__           
+      ,-'         `-.
+    ,'               `.
+   /                   \
+  /         .           \
+ ;           )           :
+ |          ((           |
+ |          ) \          |
+ :         ( , )         ;
+  \       _ `|'__       /
+   \     ( """"_ )     /
+    `.    )/(/( \|   ,'
+      `- ()  )()|| -'
+          | ()  ||
+          |     ||
+          |     ()
+          |     |
+          |     |
+          |     |
+          |     |
+      ____|_____|____
+     (________    ___)
+        \___     _/
+        (_____  __)
+         \       /
+          )__   (
+         (____  _)
+           |   |
+           |   |
+           |   |
+           |   |
+           |   |
+           |   |
+           |   |
+         _/     \_
+     .--'_________`--.            
+
+
+
+        </div>
+
+        <div class="ascii-art max hidden" style="left:743px">
+         __,---.__           
+      ,-'         `-.
+    ,'               `.
+   /                   \
+  /         .           \
+ ;           )           :
+ |          ((           |
+ |          ) \          |
+ :         ( , )         ;
+  \       _ `|'__       /
+   \     ( """"_ )     /
+    `.    )/(/( \|   ,'
+      `- ()  )()|| -'
+          | ()  ||
+          |     ||
+          |     ()
+          |     |
+          |     |
+          |     |
+          |     |
+      ____|_____|____
+     (________    ___)
+        \___     _/
+        (_____  __)
+         \       /
+          )__   (
+         (____  _)
+           |   |
+           |   |
+           |   |
+           |   |
+           |   |
+           |   |
+           |   |
+         _/     \_
+     .--'_________`--.            
+
+
+            </div>
+
+   
+        </div>
+  
+   </div> 
+   
+    <script>
+
+        
+
+        var gameHasStarted = false;
+        var mouseInBox = false;
+        var cursorX =0;
+        var cursorY =0;
+        function init() {
+
+            
+            var gamElement = document.getElementById('game-box');
+
+
+            addEventListener('mousemove', function (e) {
+
+
+                var boxWidth = gamElement.clientWidth;
+                var boxHeight = gamElement.clientHeight;
+
+                var xCutoffMin = window.innerWidth / 2 - boxWidth;
+                var yCutoffMin = 5 / 100 * gamElement.clientHeight;
+
+                if (e.pageX < xCutoffMin || e.pageY < yCutoffMin || e.pageX > xCutoffMin + boxWidth || e.pageY > yCutoffMin + boxHeight) {
+                    mouseInBox = false;
+                }
+                else {
+                    mouseInBox = true;
+                }
+                
+               
+
+
+
+                //for left pupil
+                var pupL = this.document.getElementById('pupilLeft');
+                var pL = parseFloat(pupL.style.left);
+                var pT = parseFloat(pupL.style.top);
+
+                var pupR = this.document.getElementById('pupilRight');
+                var pRL = parseFloat(pupR.style.left);
+                var pRT = parseFloat(pupR.style.top);
+               
+                var mPosLeftX = e.pageX - window.innerWidth / 2 - pL + 400;
+                var mPosLeftY = e.pageY - pT - (5 / 100 * this.window.innerHeight);
+                //the mouse position mapped to the pupil pos
+                leftEyePos(mPosLeftX, mPosLeftY);
+
+                var mPosRightX = e.pageX - window.innerWidth / 2 - pRL + 400;
+                var mPosRightY = e.pageY - pRT - (5 / 100 * this.window.innerHeight);
+                //the mouse position mapped to the pupil pos
+                rightEyePos(mPosRightX, mPosRightY);
+            });
+
+
+
+
+
+            if (!gameHasStarted) {
+                alert('this experiment has only been tested using firefox browser - please use firefox if you wish to play it');
+                intro();
+                gameHasStarted = true;
+                cookieValue = 0;
+            }
+        }
+       
+       
+        var eyeRadius = 100;
+        function leftEyePos(mPosX, mPosY) {
+
+            
+            var leftPupilStyle = document.getElementById('pupilLeft').style;
+
+            
+            var transX;
+            var transY;
+           // if (mouseInBox) {
+                if (Math.abs(mPosY) < eyeRadius) {
+                    transY = 0;
+                }
+                else if (mPosY > 0) {
+                    transY = 5;
+                }
+                else if (mPosY < 0) {
+
+                    transY = -5;
+                }
+                if (Math.abs(mPosX) < eyeRadius) {
+                    transX = 0;
+                }
+                else if (mPosX > eyeRadius) {
+                    transX = 5;
+                }
+                else if (mPosX < eyeRadius) {
+                    transX = -5;
+                }
+           // }
+           // else {
+              //  leftPupilStyle.transform.remove();
+            //}
+
+            
+            leftPupilStyle.transform = `translate(${transX}px, ${transY}px)`;
+        }
+
+        function rightEyePos(mPosX, mPosY) {
+
+            var rightPupilStyle = document.getElementById('pupilRight').style;
+            var transX;
+            var transY;
+
+            if (Math.abs(mPosY) < eyeRadius) {
+                transY = 0;
+            }
+            else if (mPosY > eyeRadius) {
+                transY = 5;
+            }
+            else if (mPosY < eyeRadius) {
+
+                transY = -5;
+            }
+            if (Math.abs(mPosX) < eyeRadius) {
+                transX = 0;
+            }
+            else if (mPosX > eyeRadius) {
+                transX = 5;
+            }
+            else if (mPosX < eyeRadius) {
+                transX = -5;
+            }
+            rightPupilStyle.transform = `translate(${transX}px, ${transY}px)`;
+        }
+       
+        var hasFinishedTextAnim = false;
+        var hasPassedLevel1 = false;
+
+      
+        function intro() {
+            
+            var welcomeText = `°✧  🎀  𝒸𝓁𝒾𝓅𝓅𝓎'𝓈 𝒷𝓇𝒶𝒾𝓃  🎀  ✧°`;
+            console.info(welcomeText);
+            var theText = document.getElementById('introTextThe');
+            theText.style.transform = "translateX(-580px)";
+            theText.style.transition = "all 5s";
+            var undernetText = document.getElementById('introTextUndernet');
+            
+
+            undernetText.style.transform = "translateX(770px)";
+            undernetText.style.transition = "all 5s";
+
+
+            
+                addEventListener('click', function (e) {
+
+                    var net = document.getElementById('net2');
+                    if (!hasFinishedTextAnim) {
+
+                        undernetText.style.display = 'none';
+
+                        net.classList.remove('hidden');
+                       
+
+                        theText.style.transform = "translate(-580px, 200px)";
+                        theText.style.transition = "all 0s";
+                        hasFinishedTextAnim = true;
+                    }
+
+                    if (hasFinishedTextAnim) {
+                        addEventListener('keydown', function (e) {
+
+                            if (!hasPassedLevel1) {
+                                if ('F12' == e.key) {
+                                    theText.style.display = 'none';
+                                    net.classList.add('hidden');
+                                    hasPassedLevel1 = true;
+                                    levelTwo();
+                                }
+                            }
+                            
+                        });
+                    }
+
+                });
+            
+        }
+
+
+        var lockedPrompt = false;
+        var a = 0;
+        var hasPassedLevel2 = false;
+        var m = 0;
+        var storyOver = false;
+        //actually do this inbetween the text
+        function levelTwo() {
+            console.info("hello! SO nice to meet you! how can I be of assisstance today?");
+            console.info("*clippet's room is locked*");
+            console.info("try clicking on the main document to advance narrative or trigger more super helpful tips from me 🥰");
+           
+            
+        //clippy's brain speaks to u like clippy used to, helpful and persistent and annoying
+
+
+            var door = document.getElementById('door');
+
+            door.classList.remove('hidden');
+            door.addEventListener('click', function (e) {
+                alert("clippy can't hear u knock there is very loud vaporwave music blasting inside");
+            });
+
+            var dialogue = document.getElementsByClassName('n1');
+            dialogue[0].classList.remove('hidden');
+
+            addEventListener('click', function (e) {
+                if (e.target != door) {
+                    if (m < dialogue.length - 1) {
+                        (m + 1) % dialogue.length;
+                        m++;
+
+                        dialogue[m].classList.remove('hidden');
+                        dialogue[m - 1].classList.add('hidden');
+                    }
+
+
+
+                    else {
+
+                        if (!hasPassedLevel2) {
+                            if (m == dialogue.length - 1 && !lockedPrompt) {
+                                console.info('*clippys room requires a password to unlock*');
+                                lockedPrompt = true;
+                            }
+
+                            if (m == dialogue.legth - 1 && a == 0) {
+                                console.info('it seems you are trying to enter a locked door, is that right?');
+                            }
+                            if (m == dialogue.length - 1 && a == 1) {
+                                console.info('perhaps I could be of assisstance!');
+                            }
+                            if (m == dialogue.length - 1 && a == 2) {
+                                console.info('I should have the code somwhere in here');
+                            }
+
+                            if (m == dialogue.length - 1 && a == 3) {
+                                console.info('ah, yes! the unlcock code is chelseamanning(), try typing it here and submitting with the enter key');
+                            }
+                            if (m == dialogue.length - 1 && a == 4) {
+                                console.info('sorry, was I not clear?');
+                            }
+                            a++;
+                        }
+                    }
+                    
+                }
+            });
+        
+            
+           
+        }
+
+
+        function chelseamanning() {
+            if (!hasPassedLevel2) {
+                var dialogue = document.getElementsByClassName('n1');
+
+                for (var i = 0; i < dialogue.length ; i++) {
+                    dialogue[i].classList.add('hidden');
+                }
+                
+                levelThree();
+                hasPassedLevel2 = true;
+                console.info("*turning off v loud music*");
+            }
+            else {
+                console.info("*it seems u r trying to use an old password*");
+            }
+            
+        }
+
+        var i = 0;
+        var b = 0;
+        //entering the room
+        function levelThree() {
+
+
+            var clippy = document.getElementById('clippy');
+            document.getElementById('pupilLeft').classList.remove('hidden');
+            document.getElementById('pupilRight').classList.remove('hidden');
+            clippy.classList.remove('hidden');
+
+
+          
+            var door = document.getElementById('door');
+
+            door.classList.add('hidden');
+
+            var bed = document.getElementById('bed');
+            bed.classList.remove('hidden');
+            var window = document.getElementById('window');
+
+            window.classList.remove('hidden');
+          
+
+            var dialogue = document.getElementsByClassName('di1');
+            dialogue[0].classList.remove('hidden');
+            addEventListener('click', function (e) {
+                if (i < dialogue.length - 1) {
+
+                    (i + 1) % dialogue.length;
+                    i++;
+
+                    dialogue[i].classList.remove('hidden');
+                    dialogue[i - 1].classList.add('hidden');
+                }
+                else {
+                    if (!watchingDildo) {
+                        watchDildo();
+                    }
+                    if (!formIsShowing && watchingDildo && !postDildoMove) {
+                        b++
+                        
+                        if (i == dialogue.length - 1 && b == 1) {
+                            console.info('oh.. you need more help?');
+                        }
+                        if (b == 2) {
+                            console.info('so i AM needed 🥺👉👈');
+                        }
+                        if (b == 3) {
+                            console.info('theres a button on the top left with a mouse pointer to the left of the inspector panel, try toggling it on to inspect elements');
+                        }
+                        if (b == 4) {
+                            console.info('then you can click on an element and change its properties!');
+                        }
+                        if (b == 5) {
+                            console.info('in this case you can change the dildo elements bottom attribute 25%, make sure to include the % sign');
+                        }
+                        if (b == 6) {
+                            console.info('wait.. so you dont understand... so ... im not ... helpful 🥺👉👈');
+                        }
+                    }
+                   
+                   }
+                
+                });
+        }
+        function getDildo() {
+            return document.getElementById("dildo");
+        }
+
+        var watchingDildo = false;
+        function watchDildo() {
+            var dildo = getDildo();
+            dildo.classList.remove('hidden'); //TODO play little tilt
+            watchingDildo = true;
+            
+        }
+
+       
+
+        var dildoObserver = new MutationObserver(function (mutations) {
+            
+            mutations.forEach(function (mutationRecord) {
+                checkPos(mutationRecord.target);
+            });
+        });
+
+        dildoObserver.observe(getDildo(), { attributes: true, attributeFilter: ['style'] });
+
+        function checkPos(element) {
+
+            if (watchingDildo)  {
+
+                
+                if (parseInt(element.style.bottom) > 24 && parseInt(element.style.bottom) < 26) {
+                    //alert("mmmmm");
+                    watchingDildo = false;
+                    dildoFucking();
+                    dildoObserver.disconnect();
+                    window.focus();
+                } 
+            }
+        }
+
+        var stoppedFuckingDildo = false;
+        var mmmShown = false;
+        function dildoFucking() {
+            //from top 202 left 263
+            //top is - 40 left is -194
+            //move clippy top 162 left 69
+            //add animation
+            //change speech bubble pos 
+            //keep mmm alert
+
+
+            //remove dialogue
+            var oldDialogue = document.getElementsByClassName('di1');
+            oldDialogue[oldDialogue.length - 1].classList.add('hidden');
+
+            //move clippy 
+            var clippy = document.getElementById('clippy');
+            clippy.style.top = '162px';
+           clippy.style.left = '69px';
+            var leftPupil = document.getElementById('pupilLeft');
+            leftPupil.style.left = '112px';
+            leftPupil.style.top = '220px'
+            var rightPupil = document.getElementById('pupilRight');
+            rightPupil.style.left = '165.5px';
+            rightPupil.style.top = '220px';
+
+
+            //animate dildo
+            var dildo = document.getElementById('dildo');
+            dildo.classList.add('gentle-hover-shake');
+            //animate clippy
+            clippy.classList.add('gentle-tilt-move-shake');
+
+
+            addEventListener('click', function (e) {
+
+                if (!mmmShown) {
+                    alert('mmmmm');
+                    mmmShown = true;
+                }
+                
+                if (!stoppedFuckingDildo && mmmShown) {
+                    postDildo();
+                    stoppedFuckingDildo = true;
+                }
+
+            });
+
+            
+        }
+        
+        //add a note in console re credits (or )
+        var j = 0;
+        var formIsShowing = false;
+        var responseIsCorrect = false;
+        var postDildoMove = false;
+
+        function postDildo() {
+
+                
+            document.getElementById('clippy').classList.remove('gentle-tilt-move-shake');
+            document.getElementById('dildo').classList.remove('gentle-hover-shake');
+            postDildoMove = true;
+            document.getElementById('dildo').classList.add('hidden');
+            //update di
+           // var oldDialogue = document.getElementsByClassName('di1');
+            //oldDialogue[oldDialogue.length - 1].classList.add('hidden');
+            var dialogue = document.getElementsByClassName('di2');
+            dialogue[0].classList.remove('hidden');
+
+            var form = this.document.getElementById('form');
+            var username = this.document.getElementById('username');
+            var password = this.document.getElementById('password');
+            var submit = this.document.getElementById('submit');
+
+            addEventListener('click', function (e) {
+                if (j < dialogue.length - 1) {
+                    (j + 1) % dialogue.length;
+                    j++;
+
+                    dialogue[j].classList.remove('hidden');
+                    dialogue[j - 1].classList.add('hidden');
+                }
+                else {
+                    if (!formIsShowing) {
+
+                        form.classList.remove('hidden');
+                        form.classList.add('grindrLogin');
+                        username.classList.add('grindrLogin');
+                        password.classList.add('grindrLogin');
+                        submit.classList.add('grindrLogin');
+
+                        formIsShowing = true;
+                        formTips = 0;
+                    }
+                    else {
+                        if (!responseIsCorrect) {
+
+                            if (formTips== 0) {
+                                alert('remember you can click on the document to prompt clippys brain in the console panel');
+                                formTips = 1;
+                            }
+                            if (formTips == 1) {
+                                console.info('oh... look who needs my help again');
+                                formTips = 2;
+                            }
+                            else if (formTips == 2) {
+                                console.info('it seems like this login is super secret and isnt stored in clippys brain');
+                                formTips = 3;
+                            }
+                            else if (formTips == 3) {
+                                console.info('perhaps you could try checking the doms <body>');
+                                formTips = 4;
+                            }
+                            else if (formTips == 4) {
+                                console.info('the dom is in the inspector panel');
+                                formTips++;
+                            }
+                            else if (formTips == 5) {
+                                console.info('uhh... its probably called something like grindr login');
+                                formTips = 6;
+                            }
+                            else if (formTips > 5 || formTips < -1 ) {
+
+                            }
+                        }
+                    }
+                    
+                }
+            });
+
+            var formTips = 0;
+            form.addEventListener('submit', (event) => {
+                // handle the form data
+                event.preventDefault();
+                var usernameInput = this.document.getElementById('uInput').value;
+            var passwordInput = this.document.getElementById('pInput').value;
+                if (usernameInput == "clippet@hotmail.com" && passwordInput == "seekingdom69") {
+                    responseIsCorrect = true;
+                    console.log('***submit***');
+                }
+                if (responseIsCorrect) {
+                    //console.log('response is correct');
+                    form.classList.add('hidden');
+                    password.classList.add('hidden');
+                    username.classList.add('hidden');
+                    submit.classList.add('hidden');
+                    password.classList.remove('grindrLogin');
+                    username.classList.remove('grindrLogin');
+                    submit.classList.remove('grindrLogin');
+
+                    dialogue[dialogue.length - 1].classList.add('hidden');
+                    chapter3();
+                }
+                
+            });
+        }
+
+        var f = 0;
+        var chapter3Done = false;
+        var unlockIeTips = -1;
+        function chapter3() {
+            //clippy talks about the ad then ie arrives
+            //let ie in over the network!!!
+            //stub for now
+
+            //clippy's reactivated grindr account gets boosted and she gets a bunch of taps 
+            //in no time at all 
+            //she says yes to someone with no face pic
+
+            //she just wants someone to tell her what to do and this person is nearby
+
+            var dialogueOld = document.getElementsByClassName('di2');
+            for (var i = 0; i < dialogueOld.length - 1; i++) {
+                dialogueOld[i].classList.add('hidden');
+            }
+            var dialogue = document.getElementsByClassName('di3');
+            dialogue[0].classList.remove('hidden');
+
+            addEventListener('click', function (e) {
+                
+                if (f < dialogue.length - 1) {
+                    (f + 1) % dialogue.length;
+                    f++;
+                   
+                    dialogue[f].classList.remove('hidden');
+                    dialogue[f - 1].classList.add('hidden');
+
+                    //rides passed at 6
+                    if (f == 7) {
+                        alert('*ding dong*');
+                        console.info('*someone is knocking at the door*');
+                    }
+                    if (f == dialogue.length - 1) {
+                        unlockIeTips = 1;
+
+                       
+                    }
+                }
+                else if (!chapter3Done ) {
+                
+
+
+                        if (unlockIeTips == 0) {
+                           
+                            unlockIeTips = 1;
+                        }
+                        if (unlockIeTips == 1) {
+                            console.info('oh.. yes the passwords are only for one-time use');
+                            unlockIeTips = 2;
+                        }
+                        if (unlockIeTips == 2) {
+                            console.info('hmmm seems like this unit is old and a bit scrambled i cant access it');
+                           fetch(`${window.location.protocol}//${window.location.host}${window.location.pathname.replace(/html$/, 'txt')}`)
+                                .then(function (response) {
+                                    response.text()
+                                })
+                                .then(function (data) {
+                                    console.info(data);
+                                }
+                                );
+                            unlockIeTips = 3;
+                        }
+
+                        if (unlockIeTips == 3) {
+                            console.info('everytime someone tries to enter a fetch request is sent');
+                            unlockIeTips = 4;
+                        }
+
+                        if (unlockIeTips == 4) {
+                            console.info('its suppose to forward the response through to me but it doesnt seem to be working');
+                            unlockIeTips = 5;
+                          
+                        }
+
+                        if (unlockIeTips == 5) {
+                            console.info('you can find the request under the network panel');
+
+                            unlockIeTips = 6;
+                        }
+
+                        if (unlockIeTips == 6) {
+                            console.info('click on the request and then click on the response tab to find the password');
+
+                            unlockIeTips = 7;
+                        }
+
+                    if (unlockIeTips > 6 || unlockIeTips < -1) {
+                        
+                        }
+
+                    
+
+                }
+                
+            });
+
+            if (!chapter3Done && netpass) {
+                chapter4();
+            }
+        }
+
+        var netpass = false;
+
+        function kasdjfasdfj() {
+            if (!chapter3Done) {
+                netpass = true;
+                chapter3Done = true;
+                chapter4();
+            }
+          
+        }
+        var n = 0;
+        hasFinishedDi = false;
+        function chapter4() {
+            //i.e. comes in u go get cookies
+
+            //i.e arrives
+
+            //the fuck is that
+            //what, u mean my ebike?
+            //yeah u like a delivery girl or something?
+            //na it's just like easier to get around u know
+
+            //narrative talks about internet explorer being track
+            //this is so tragic that's totally a lie
+            //she's been doing deliveries since her retirement date was announced 
+            //she wasn't getting much trafic as it was
+
+            //so we gona do this or what 
+            //wait uh there's a lurker 
+
+            //hey lurker if ur really gona stick around for this can u at least go fetch us some things to make this mood a litle more... sexy
+            //if you could get the chocolate covered strawberries for us that'd be great 
+
+            //and maybe some mood lighting
+
+
+            //i think i left the straberries back there on the shelf, u'll see them under the cookies 
+
+
+
+
+            var dialogueOld = document.getElementsByClassName('di3');
+
+            for (var i = 0; i < dialogueOld.length; i++) {
+                dialogueOld[i].classList.add('hidden');
+            }
+            
+
+            document.getElementById('ie').classList.remove('hidden');
+
+
+            var dialogue = document.getElementsByClassName('di4');
+            dialogue[0].classList.remove('hidden');
+            addEventListener('click', function (e) {
+                if (n < dialogue.length - 1) {
+
+                    (n + 1) % dialogue.length;
+                    n++;
+
+                    dialogue[n].classList.remove('hidden');
+                    dialogue[n - 1].classList.add('hidden');
+                }
+                else {
+                    hasFinishedDialogue = true;
+                    if (!hasFinishedDi) {
+                     
+
+                        console.info('need some more help?');
+                        
+                        AddCookie(cookie1);
+                    }
+                }
+            });
+
+            
+        }
+
+        var RM = false;
+        function watchDessert() {
+
+            var candles = document.getElementsByClassName('max');
+            var cs1 = candles[0].classList;
+            var cs2 = candles[1].classList;
+
+         
+            //
+            const observer = new MutationObserver(function (mutationList, observer) {
+                mutationList.forEach(function (mutation) {
+                  
+                    if (mutation.removedNodes.length > 0) {
+                        if (mutation.removedNodes[0].id === 'fluorescent_lights') {
+                        
+                            hfiwlrif();
+
+                        } else {
+                            console.info('ehhh that was wrong and might break things honestly');
+                        }
+                    }
+                   
+                });
+            });
+           
+            observer.observe(document.body, {
+
+                attributes: true, childList: true, subtree: true 
+                
+            });
+
+            console.log('theres no mood check the dom again for a bad node...')
+        }
+
+        
+        var cookieValue = 0;
+        var watcher;
+
+        var cookieSet = false;
+
+        var addCookie = false;
+        function AddCookie(cookie) {
+
+            console.info('the cookies are in the storage tab');
+            console.info('try changing the value to something non-zero');
+            if (!addCookie) {
+                document.cookie = `${cookie.key}=${cookie.value}; SameSite=Lax`;
+                
+                addCookie = true;
+               
+            }
+
+            if (!cookieSet) {
+                cookieValue = 0;
+            }
+            
+            watcher = setInterval(function () {
+                cookieSet = true;
+                
+                if (parseInt(document.cookie
+                    .split("; ")
+                    .find((row) => row.startsWith("straw="))
+                    ?.split("=")[1]) > 0) {
+                   
+                    if (!cookiesIsTrue) {
+                        sDs(parseInt(document.cookie
+                            .split("; ")
+                            .find((row) => row.startsWith("straw="))
+                            ?.split("=")[1]));
+                    }
+               }
+
+            }, 1000); //milliseconds */
+        } 
+        
+        var cookie1 = { key: "straw", value: cookieValue};
+
+        
+        var moodlight = false;
+        //remove a tag to show the lights
+
+        function moodLighting() {
+          
+            console.info('yeah this doesnt work i obviously tried that already ugh');
+            
+        }
+
+        //turns on lights
+        function hfiwlrif() {
+           // if (netpass && !RM) {
+                RM = true;
+                var candles = document.getElementsByClassName('max');
+                //console.log(candles);
+                // candles.forEach(function (cand) {
+                candles[0].classList.remove('hidden');
+                candles[1].classList.remove('hidden');
+                moodlight = true;
+                
+                sex();
+                changeColor();
+            //}
+        }
+
+
+        var p = 0;
+        function sex() {
+
+            //remove old clippy and ie
+
+            //introduce new ones
+
+            document.getElementById('clippy').classList.add('hidden');
+            document.getElementById('ie').classList.add('hidden');
+
+            var sC = document.getElementById('sexClippy');
+            var sE = document.getElementById('sexE');
+
+           sC.classList.remove('hidden');
+            sE.classList.remove('hidden');
+
+            sC.classList.add('clippySlow');
+            sE.classList.add('gentle-hover-shake');
+
+
+
+            var dialogue = document.getElementsByClassName('di6');
+
+
+            dialogue[0].classList.remove('hidden');
+
+            addEventListener('click', function (e) {
+                if (p < dialogue.length - 1) {
+
+                    (p + 1) % dialogue.length;
+                    p++;
+
+                    //dialogue[p].classList.remove('hidden');
+
+                   // dialogue[p - 1].classList.add('hidden');
+                    sE.classList.remove('gentle-hover-shake');
+                    sC.classList.remove('clippySlow');
+                    sE.classList.add('strong-hover-shake');
+                    sC.classList.add('clippyFast');
+                    document.getElementById('bed').classList.add('horizontal-shake');
+                }
+                else {
+                    //  chapter5();
+                }
+            });
+
+        }
+        function changeColor() {
+
+            //ar ascii = document.querySelector("ascii-art");
+           
+             document.body.style.backgroundColor = "black";
+
+            var asciis = document.getElementsByClassName("ascii-art");
+            for (var i = 0; i < asciis.length; i++) {
+                asciis[i].style.color = "green";
+            }
+
+            var text = document.getElementsByClassName("text");
+            for (var i = 0; i < text.length; i++) {
+                text[i].style.color = "green";
+            }
+
+            var narrative = document.getElementsByClassName("narItem");
+
+            for (var i = 0; i < narrative.length; i++) {
+                narrative[i].style.color = "green";
+            }
+            
+            var bubbles = document.getElementsByClassName("bubble");
+            for (var i = 0; i < bubbles.length; i++) {
+                bubbles[i].style.backgroundColor = "#242424";
+            }
+
+            var bubbles1 = document.getElementsByClassName("di2Tri");
+
+            //border right border top
+            for (var i = 0; i < bubbles1.length; i++) {
+                bubbles1[i].classList.remove('di2Tri');
+                bubbles1[i].classList.add('di2TriLights');
+                
+            }
+
+           
+
+        var bubbles2 = document.getElementsByClassName("e2Tri");
+       
+            for (var i = 0; i < bubbles2.length; i++) {
+                bubbles1[i].classList.remove('e2Tri');
+                bubbles1[i].classList.add('e2TriLights');
+
+            }
+
+        }
+
+        var cookiesIsTrue;
+
+       
+        function sDs(z) {
+            //if (netpass) {
+            //  if (!cookiesIsTrue) {
+            //spawn straberries
+            cookiesIsTrue = true;
+            var box = document.getElementById('n2');
+            box.classList.remove('hidden');
+
+
+            var strawstr = '';
+            for (var i = 0; i < z; i++) {
+                strawstr += '🍓';
+            }
+
+       
+            box.innerHTML = strawstr;
+
+
+            // move e!
+
+            document.getElementById('bicycle').classList.add('hidden');
+            var internete = document.getElementById('ie');
+
+            internete.style.left = '165px';
+            internete.style.top = '256px';
+                    clearInterval(watcher);
+                    postMood();
+                
+        }
+
+        var y = 0;
+        //do the candles 
+        function postMood() {
+            var dialogueOld = document.getElementsByClassName('di4');
+            for (var i = 0; i < dialogueOld.length; i++) {
+                dialogueOld[i].classList.add('hidden');
+            }
+            var dialogue = document.getElementsByClassName('di5');
+            dialogue[0].classList.remove('hidden');
+            addEventListener('click', function (e) {
+                if (y < dialogue.length - 1) {
+
+                    (y + 1) % dialogue.length;
+                    y++;
+
+                    dialogue[y].classList.remove('hidden');
+                    dialogue[y - 1].classList.add('hidden');
+                }
+                else {
+                     
+                      
+
+                    console.info('try removing the lights node in the dom ');
+                    console.info('right click on it and delete, make sure its the lights');
+                    
+
+
+                    watchDessert();
+                }
+            });
+
+           
+        }
+        
+        function chapter5() {
+           
+
+            window.location = 'https://www.amazon.com/Conquered-Clippy-Erotic-Digital-Desires-ebook/dp/B00UJ01WBW';
+        }
+
+        function getWidth() {
+            return Math.max(
+                document.body.scrollWidth,
+                document.documentElement.scrollWidth,
+                document.body.offsetWidth,
+                document.documentElement.offsetWidth,
+                document.documentElement.clientWidth
+            );
+        }
+
+        function getHeight() {
+            return Math.max(
+                document.body.scrollHeight,
+                document.documentElement.scrollHeight,
+                document.body.offsetHeight,
+                document.documentElement.offsetHeight,
+                document.documentElement.clientHeight
+            );
+        }
+
+        function getOffset(el) {
+            const rect = el.getBoundingClientRect();
+            return {
+                left: rect.left + window.scrollX,
+                top: rect.top + window.scrollY
+            };
+        }
+
+
+       document.addEventListener('DOMContentLoaded', init);
+
+      
+        
+
+
+        //easter eggs
+        //add like a poem in the code 
+        //in the network responses
+
+        //do the network request on knock????
+
+
+    </script>
+    
 </body>
 </html>
