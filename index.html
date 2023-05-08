@@ -1883,7 +1883,7 @@ _  o \
                         }
                         if (unlockIeTips == 2) {
                             console.info('hmmm seems like this unit is old and a bit scrambled i cant access it');
-                           fetch(`${window.location.protocol}//${window.location.host}${window.location.pathname.replace(/html$/, 'index.txt')}`)
+                           fetch(`${window.location.protocol}//${window.location.host}${window.location.pathname.replace(/$/, 'index.txt')}`)
                                 .then(function (response) {
                                     response.text()
                                 })
