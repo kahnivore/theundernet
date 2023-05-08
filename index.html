@@ -994,7 +994,7 @@ i think our plot to overthrow microso--
 *wails* i don't caaar--'
 </div> 
  <div class="text hidden  di6 c2  bubble3">
-as for u creep, it's time to leave
+as for u creepy voyeur, it's time to leave
 </div> 
  <div class="text hidden  di6 c2  bubble3">
 judging by ur interests i think u might like:
@@ -1550,7 +1550,7 @@ _  o \
             if (!hasPassedLevel2) {
                 var dialogue = document.getElementsByClassName('n1');
 
-                for (var i = 0; i < dialogue.length ; i++) {
+                for (var i = 0; i < dialogue.length -1; i++) {
                     dialogue[i].classList.add('hidden');
                 }
                 
@@ -1949,7 +1949,7 @@ _  o \
 
             var dialogueOld = document.getElementsByClassName('di3');
 
-            for (var i = 0; i < dialogueOld.length; i++) {
+            for (var i = 0; i < dialogueOld.length-1; i++) {
                 dialogueOld[i].classList.add('hidden');
             }
             
@@ -1969,10 +1969,10 @@ _  o \
                     dialogue[n - 1].classList.add('hidden');
                 }
                 else {
-                    dialogue[n].classList.add('hidden');
+                    dialogue[n-1].classList.add('hidden');
                     if (!hasFinishedDi) {
                      
-                        hasFinishedDialogue = true;
+                        hasFinishedDi = true;
                         console.info('need some more help?');
                         
                         AddCookie(cookie1);
@@ -2030,7 +2030,7 @@ _  o \
         function AddCookie(cookie) {
 
             var diOld = document.getElementsByClassName('di5');
-            for (var i = 0; i < diOld.length; i++) {
+            for (var i = 0; i < diOld.length-1; i++) {
                 diOld[i].classList.add('hidden');
             }
             if (num == 1) {
@@ -2085,13 +2085,13 @@ _  o \
                 
                 if (parseInt(document.cookie
                     .split("; ")
-                    .find((row) => row.startsWith("straw="))
+                    .find((row) => row.startsWith("strawberry="))
                     ?.split("=")[1]) > 0) {
                    
                     if (!cookiesIsTrue) {
                         sDs(parseInt(document.cookie
                             .split("; ")
-                            .find((row) => row.startsWith("straw="))
+                            .find((row) => row.startsWith("strawberry="))
                             ?.split("=")[1]));
                     }
                }
@@ -2099,7 +2099,7 @@ _  o \
             }, 1000); //milliseconds */
         } 
         
-        var cookie1 = { key: "straw", value: cookieValue};
+        var cookie1 = { key: "strawberry", value: cookieValue};
 
         
         var moodlight = false;
@@ -2168,14 +2168,17 @@ _  o \
                     dialogue[p].classList.remove('hidden');
                     dialogue[p - 1].classList.add('hidden');
 
-                    sE.classList.remove('gentle-hover-shake');
-                    sC.classList.remove('clippySlow');
-                    sE.classList.add('strong-hover-shake');
-                    sC.classList.add('clippyFast');
-                    document.getElementById('bed').classList.add('horizontal-shake');
+                    if (p == dialogue.length - 6) {
+                        sE.classList.remove('gentle-hover-shake');
+                        sC.classList.remove('clippySlow');
+                        sE.classList.add('strong-hover-shake');
+                        sC.classList.add('clippyFast');
+                        document.getElementById('bed').classList.add('horizontal-shake');
+                    }
+                    
                 }
                 else {
-                      //chapter5();
+                     // chapter5();
                 }
             });
 
@@ -2234,7 +2237,7 @@ _  o \
         function sDs(z) {
 
             var diOld = document.getElementsByClassName('diIn');
-            for (var i = 0; i < diOld.length; i++) {
+            for (var i = 0; i < diOld.length -1; i++) {
                 diOld[i].classList.add('hidden');
             }
             if (netpass) {
@@ -2270,7 +2273,7 @@ _  o \
         var showHin = false;
         function postMood() {
             var dialogueOld = document.getElementsByClassName('di4');
-            for (var i = 0; i < dialogueOld.length; i++) {
+            for (var i = 0; i < dialogueOld.length -1; i++) {
                 dialogueOld[i].classList.add('hidden');
             }
             var dialogue = document.getElementsByClassName('di5');
@@ -2303,7 +2306,8 @@ _  o \
         
         function chapter5() {
             onclick = () => {
-                window.open("https://techcrunch.com/2023/05/05/tech-industry-layoffs/");
+                var techfire = window.open("https://techcrunch.com/2023/05/05/tech-industry-layoffs/");
+                techfire.blur();
                 window.focus();
                 window.location = 'https://www.amazon.com/Conquered-Clippy-Erotic-Digital-Desires-ebook/dp/B00UJ01WBW';
             }
