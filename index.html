@@ -779,7 +779,7 @@ hi everybody
            |   __   |
            |  |__|  |
            |___WW___|
-               ||
+               WW
                ||
                ||
 _______________||________________
@@ -1550,7 +1550,7 @@ _  o \
             if (!hasPassedLevel2) {
                 var dialogue = document.getElementsByClassName('n1');
 
-                for (var i = 0; i < dialogue.length -1; i++) {
+                for (var i = 0; i < dialogue.length  ; i++) {
                     dialogue[i].classList.add('hidden');
                 }
                 
@@ -1567,6 +1567,8 @@ _  o \
         var i = 0;
         var b = 0;
         //entering the room
+
+        var roomIn = false;
         function levelThree() {
 
 
@@ -1589,14 +1591,20 @@ _  o \
           
 
             var dialogue = document.getElementsByClassName('di1');
-            dialogue[0].classList.remove('hidden');
+            if (!roomIn) {
+
+                dialogue[0].classList.remove('hidden');
+                roomIn = true;
+            }
             addEventListener('click', function (e) {
                 if (i < dialogue.length - 1) {
 
                     (i + 1) % dialogue.length;
                     i++;
+                    if (!watchingDildo) {
 
                     dialogue[i].classList.remove('hidden');
+                    }
                     dialogue[i - 1].classList.add('hidden');
                 }
                 else {
@@ -1643,6 +1651,10 @@ _  o \
             var dildo = getDildo();
             dildo.classList.remove('hidden'); //TODO play little tilt
             watchingDildo = true;
+           // var diii = document.getElementsByClassName('di1');
+           // for (var i = 0; i < length; i++) {
+            //    diii[i].classList.add('hidden');
+            //}
             
         }
 
@@ -1680,7 +1692,13 @@ _  o \
 
             //remove dialogue
             var oldDialogue = document.getElementsByClassName('di1');
-            oldDialogue[oldDialogue.length - 1].classList.add('hidden');
+
+            for (var i = 0; i < oldDialogue.length ; i++) {
+                oldDialogue[i].classList.add('hidden');
+                
+            }
+
+            
 
             //move clippy 
             var clippy = document.getElementById('clippy');
@@ -1732,8 +1750,11 @@ _  o \
             postDildoMove = true;
             document.getElementById('dildo').classList.add('hidden');
             //update di
-           // var oldDialogue = document.getElementsByClassName('di1');
-            //oldDialogue[oldDialogue.length - 1].classList.add('hidden');
+          // var oldDialogue = document.getElementsByClassName('di1');
+           //// for (var i = 0; i < length; i++) {
+           //     oldDialogue[i].classList.add('hidden');
+          //  }
+
             var dialogue = document.getElementsByClassName('di2');
             dialogue[0].classList.remove('hidden');
 
@@ -1819,6 +1840,7 @@ _  o \
                     submit.classList.remove('grindrLogin');
 
                     dialogue[dialogue.length - 1].classList.add('hidden');
+                    
                     chapter3();
                 }
                 
@@ -1843,7 +1865,7 @@ _  o \
             //she just wants someone to tell her what to do and this person is nearby
 
             var dialogueOld = document.getElementsByClassName('di2');
-            for (var i = 0; i < dialogueOld.length - 1; i++) {
+            for (var i = 0; i < dialogueOld.length ; i++) {
                 dialogueOld[i].classList.add('hidden');
             }
             var dialogue = document.getElementsByClassName('di3');
@@ -1949,7 +1971,7 @@ _  o \
 
             var dialogueOld = document.getElementsByClassName('di3');
 
-            for (var i = 0; i < dialogueOld.length-1; i++) {
+            for (var i = 0; i < dialogueOld.length; i++) {
                 dialogueOld[i].classList.add('hidden');
             }
             
@@ -2028,18 +2050,18 @@ _  o \
         var num = 0;
         var doneThis = false;
         function AddCookie(cookie) {
-
-            var diOld = document.getElementsByClassName('di5');
-            for (var i = 0; i < diOld.length-1; i++) {
+        //wrong
+            var diOld = document.getElementsByClassName('di4');
+            for (var i = 0; i < diOld.length; i++) {
                 diOld[i].classList.add('hidden');
             }
-            if (num == 1) {
+            
                 document.getElementById('bicycle').classList.add('hidden');
                 var internete = document.getElementById('ie');
 
                 internete.style.left = '165px';
                 internete.style.top = '256px';
-            }
+           
                 var dialogue = document.getElementsByClassName('diIn');
             if (!doneThis) {
                 dialogue[0].classList.remove('hidden');
@@ -2148,7 +2170,10 @@ _  o \
             sC.classList.add('clippySlow');
             sE.classList.add('gentle-hover-shake');
 
-
+            var oldDi = document.getElementsByClassName('di5');
+            for (var i = 0; i < oldDi.length; i++) {
+                oldDi[i].classList.add('hidden');
+            }
 
             var dialogue = document.getElementsByClassName('di6');
 
@@ -2237,7 +2262,7 @@ _  o \
         function sDs(z) {
 
             var diOld = document.getElementsByClassName('diIn');
-            for (var i = 0; i < diOld.length -1; i++) {
+            for (var i = 0; i < diOld.length; i++) {
                 diOld[i].classList.add('hidden');
             }
             if (netpass) {
@@ -2272,8 +2297,8 @@ _  o \
         //do the candles 
         var showHin = false;
         function postMood() {
-            var dialogueOld = document.getElementsByClassName('di4');
-            for (var i = 0; i < dialogueOld.length -1; i++) {
+            var dialogueOld = document.getElementsByClassName('diIN');
+            for (var i = 0; i < dialogueOld.length ; i++) {
                 dialogueOld[i].classList.add('hidden');
             }
             var dialogue = document.getElementsByClassName('di5');
@@ -2306,10 +2331,10 @@ _  o \
         
         function chapter5() {
             onclick = () => {
+                window.location = 'https://www.amazon.com/Conquered-Clippy-Erotic-Digital-Desires-ebook/dp/B00UJ01WBW';
                 var techfire = window.open("https://techcrunch.com/2023/05/05/tech-industry-layoffs/");
                 techfire.blur();
-                window.focus();
-                window.location = 'https://www.amazon.com/Conquered-Clippy-Erotic-Digital-Desires-ebook/dp/B00UJ01WBW';
+               
             }
         }
 
