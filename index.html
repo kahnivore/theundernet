@@ -1295,8 +1295,7 @@ _  o \
         var cursorY =0;
         function init() {
 
-            console.warn = () => { };
-            console.error = () => { };
+           
             var gamElement = document.getElementById('game-box');
 
 
@@ -1829,6 +1828,9 @@ _  o \
         var f = 0;
         var chapter3Done = false;
         var unlockIeTips = -1;
+
+
+
         function chapter3() {
             //clippy talks about the ad then ie arrives
             //let ie in over the network!!!
@@ -1881,7 +1883,7 @@ _  o \
                         }
                         if (unlockIeTips == 2) {
                             console.info('hmmm seems like this unit is old and a bit scrambled i cant access it');
-                           fetch(`${window.location.protocol}//${window.location.host}${window.location.pathname.replace(/html$/, 'txt')}`)
+                           fetch(`${window.location.protocol}//${window.location.host}${window.location.pathname.replace(/html$/, 'index.txt')}`)
                                 .then(function (response) {
                                     response.text()
                                 })
