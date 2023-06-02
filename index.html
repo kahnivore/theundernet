@@ -1516,8 +1516,9 @@ _  o \
 
                         if (!hasPassedLevel2) {
                             if (m == dialogue.length - 1 && !lockedPrompt) {
-                                alert('clippys brain is located in the console pannel');
+                                alert('clippys brain is located in the console panel');
                                 console.info('*clippys room requires a password to unlock*');
+                                console.info('click on the main webpage for more tips/to advance');
                                 lockedPrompt = true;
                             }
 
@@ -1790,7 +1791,7 @@ _  o \
                         if (!responseIsCorrect) {
 
                             if (formTips== 0) {
-                                //alert('remember you can click on the document to prompt clippys brain in the console panel');
+                                //alert('remember you can click on the document/webpage to prompt clippys brain in the console panel');
                                 formTips = 1;
                             }
                             if (formTips == 1) {
@@ -1925,7 +1926,7 @@ _  o \
                         }
 
                         if (unlockIeTips == 4) {
-                            console.info('its suppose to forward the response through to me but it doesnt seem to be working');
+                            console.info('its supposed to forward the response through to me but it doesnt seem to be working');
                             unlockIeTips = 5;
                           
                         }
@@ -1937,8 +1938,8 @@ _  o \
                         }
 
                         if (unlockIeTips == 6) {
-                            console.info('click on the request and then click on the response tab to find the password');
-
+                            console.info('click on the request and then click on the RESPONSE tab to find the password');
+                             console.info('then copy paste the password in here and press enter (or type it out)');
                             unlockIeTips = 7;
                         }
 
@@ -2093,8 +2094,9 @@ _  o \
 
             if (!addCookie) {
 
-                console.info('the cookies are in the storage tab');
-                console.info('try changing the value to something non-zero');
+                console.info('the cookies are in the STORAGE panel');
+                 console.info('find the cookie called strawberry');
+                console.info('try changing the VALUE to something non-zero');
                 document.cookie = `${cookie.key}=${cookie.value}; SameSite=Lax`;
                 
                 addCookie = true;
@@ -2321,6 +2323,7 @@ _  o \
                     if (!showHin) {
                         watchDessert(); 
                         console.info('try removing the lights node in the DOM (thats in the inspector panel)');
+                        console.info('go to the inpspector panel and scroll down to find it)');
                         console.info('right click on it and delete, make sure its the lights');
                         showHin = true;
                     }
